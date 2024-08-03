@@ -404,4 +404,4 @@ player_multiselect_blk = st.multiselect('Select two players to compare block sta
     ['LeBron James', 'Michael Jordan', 'Kobe Bryant', 'Kareem Abdul-Jabbar', 'Stephen Curry'], max_selections = 2)
 
 if len(player_multiselect_blk) == 2:
-    st.write(player_multiselect_blk[0])
+    st.write(player_multiselect_blk[1])
