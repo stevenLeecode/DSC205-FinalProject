@@ -172,12 +172,10 @@ def plot_reg_plot(player):
   sns.regplot(x = player['season'], y = player['pts'], line_kws = {'color': 'red'})
   plt.xticks(player['season'])
   #Show average value using axvline
-  ax = plt.gca()
   #ax.axhline(player['pts'].mean(), color='black', linestyle='dashed', linewidth=1)
-  return fig
+  return st.pyplot(fig = fig, clear_figure = True)
 
 player_input = st.radio('Select a Player', ('LeBron James', 'Michael Jordan', 'Kareem Abdul-Jabbar', 'Kobe Byrant', 'Stephen Curry'))
 
 if player_input == 'LeBron James':
     plot_reg_plot(lbj)
-    st.pyplot(fig = fig, clear_figure = True)
