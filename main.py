@@ -237,18 +237,26 @@ sns.lineplot(data = kobe_ast, x = kobe_ast.index, y = kobe_ast['ast'], label = '
 sns.lineplot(data = curry_ast, x = curry_ast.index, y = curry_ast['ast'], label = 'Stephen Curry')
 sns.lineplot(data = mj_ast, x = mj_ast.index, y = mj_ast['ast'], label = 'Michael Jordan')
 
-ax.scatter(lebron_ast_max, lebron_ast['ast'].max(), color='green', zorder=5, s = 60, marker = 'x')
-ax.scatter(kareem_ast_max, kareem_ast['ast'].max(), color='green', zorder=5, s = 60, marker = 'x')
-ax.scatter(kobe_ast_max, kobe_ast['ast'].max(), color='green', zorder=5, s = 60, marker = 'x')
-ax.scatter(curry_ast_max, curry_ast['ast'].max(), color='green', zorder=5, s = 60, marker = 'x')
-ax.scatter(mj_ast_max, mj_ast['ast'].max(), color='green', zorder=5, s = 60, marker = 'x')
+ax.scatter(lebron_ast_max, lebron_ast['ast'].max(), color='gold', zorder=5, s = 90, marker = '.')
+ax.scatter(kareem_ast_max, kareem_ast['ast'].max(), color='green', zorder=5, s = 90, marker = '.')
+ax.scatter(kobe_ast_max, kobe_ast['ast'].max(), color='blue', zorder=5, s = 90, marker = '.')
+ax.scatter(curry_ast_max, curry_ast['ast'].max(), color='purple', zorder=5, s = 90, marker = '.')
+ax.scatter(mj_ast_max, mj_ast['ast'].max(), color='red', zorder=5, s = 90, marker = '.')
 
 ax.annotate('LeBron James', xy=(lebron_ast_max, lebron_ast['ast'].max()), xytext=(lebron_ast_max - 0.73, lebron_ast['ast'].max() + 15))
 ax.annotate('Kareem Abdul-Jabbar', xy=(kareem_ast_max, kareem_ast['ast'].max()), xytext=(kareem_ast_max - 1, kareem_ast['ast'].max() + 15))
 ax.annotate('Kobe Bryant', xy=(kobe_ast_max, kobe_ast['ast'].max()), xytext=(kobe_ast_max - 0.6, kobe_ast['ast'].max() + 15))
 ax.annotate('Stephen Curry', xy=(curry_ast_max, curry_ast['ast'].max()), xytext=(curry_ast_max - 0.7, curry_ast['ast'].max() + 15))
-ax.annotate('Michael Jordan', xy=(mj_ast_max, mj_ast['ast'].max()), xytext=(mj_ast_max - 0.7, mj_ast['ast'].max() - 25))
+ax.annotate('Michael Jordan', xy=(mj_ast_max, mj_ast['ast'].max()), xytext=(mj_ast_max - 0.7, mj_ast['ast'].max() - 25), color = 'red')
 
 ax.legend()
 
 st.pyplot(fig = fig, clear_figure = True)
+
+'''
+ax.scatter(lbj_max, lbj['pts'].max(), color='gold', zorder=5, s = 90, marker = '.')
+ax.scatter(mj_max, mj['pts'].max(), color='red', zorder=5, s = 90, marker = '.')
+ax.scatter(kareem_max, kareem['pts'].max(), color='green', zorder=5, s = 90, marker = '.')
+ax.scatter(curry_max, curry['pts'].max(), color='purple', zorder=5, s = 90, marker = '.')
+ax.scatter(kobe_max, kobe['pts'].max(), color='blue', zorder=5, s = 90, marker = '.')
+'''
