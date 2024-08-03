@@ -231,11 +231,11 @@ ax.set_xlabel('Nth Year')
 ax.set_ylabel('Assists per season')
 ax.set_title('Total Assists each year for each player.')
 
-sns.lineplot(data = lebron_ast, x = lebron_ast.index, y = lebron_ast['ast'], label = 'LeBron James')
-sns.lineplot(data = kareem_ast, x = kareem_ast.index, y = kareem_ast['ast'], label = 'Kareem Abdul-Jabbar')
-sns.lineplot(data = kobe_ast, x = kobe_ast.index, y = kobe_ast['ast'], label = 'Kobe Bryant')
-sns.lineplot(data = curry_ast, x = curry_ast.index, y = curry_ast['ast'], label = 'Stephen Curry')
-sns.lineplot(data = mj_ast, x = mj_ast.index, y = mj_ast['ast'], label = 'Michael Jordan')
+sns.lineplot(data = lebron_ast, x = lebron_ast.index, y = lebron_ast['ast'], label = 'LeBron James', color = 'gold')
+sns.lineplot(data = kareem_ast, x = kareem_ast.index, y = kareem_ast['ast'], label = 'Kareem Abdul-Jabbar', color = 'green')
+sns.lineplot(data = kobe_ast, x = kobe_ast.index, y = kobe_ast['ast'], label = 'Kobe Bryant', color = 'blue')
+sns.lineplot(data = curry_ast, x = curry_ast.index, y = curry_ast['ast'], label = 'Stephen Curry', color = 'purple')
+sns.lineplot(data = mj_ast, x = mj_ast.index, y = mj_ast['ast'], label = 'Michael Jordan', color = 'red')
 
 ax.scatter(lebron_ast_max, lebron_ast['ast'].max(), color='gold', zorder=5, s = 90, marker = '.')
 ax.scatter(kareem_ast_max, kareem_ast['ast'].max(), color='green', zorder=5, s = 90, marker = '.')
@@ -243,11 +243,11 @@ ax.scatter(kobe_ast_max, kobe_ast['ast'].max(), color='blue', zorder=5, s = 90, 
 ax.scatter(curry_ast_max, curry_ast['ast'].max(), color='purple', zorder=5, s = 90, marker = '.')
 ax.scatter(mj_ast_max, mj_ast['ast'].max(), color='red', zorder=5, s = 90, marker = '.')
 
-ax.annotate('LeBron James', xy=(lebron_ast_max, lebron_ast['ast'].max()), xytext=(lebron_ast_max - 0.73, lebron_ast['ast'].max() + 15))
-ax.annotate('Kareem Abdul-Jabbar', xy=(kareem_ast_max, kareem_ast['ast'].max()), xytext=(kareem_ast_max - 1, kareem_ast['ast'].max() + 15))
-ax.annotate('Kobe Bryant', xy=(kobe_ast_max, kobe_ast['ast'].max()), xytext=(kobe_ast_max - 0.6, kobe_ast['ast'].max() + 15))
-ax.annotate('Stephen Curry', xy=(curry_ast_max, curry_ast['ast'].max()), xytext=(curry_ast_max - 0.7, curry_ast['ast'].max() + 15))
-ax.annotate('Michael Jordan', xy=(mj_ast_max, mj_ast['ast'].max()), xytext=(mj_ast_max - 0.7, mj_ast['ast'].max() - 25), color = 'red')
+ax.annotate('LeBron James', xy=(lebron_ast_max, lebron_ast['ast'].max()), xytext=(lebron_ast_max - 0.73, lebron_ast['ast'].max() + 15), color = 'gold')
+ax.annotate('Kareem Abdul-Jabbar', xy=(kareem_ast_max, kareem_ast['ast'].max()), xytext=(kareem_ast_max - 1, kareem_ast['ast'].max() + 15), color = 'green')
+ax.annotate('Kobe Bryant', xy=(kobe_ast_max, kobe_ast['ast'].max()), xytext=(kobe_ast_max - 0.6, kobe_ast['ast'].max() + 15), color = 'blue')
+ax.annotate('Stephen Curry', xy=(curry_ast_max, curry_ast['ast'].max()), xytext=(curry_ast_max - 0.7, curry_ast['ast'].max() + 15), color = 'purple')
+ax.annotate('MJ', xy=(mj_ast_max, mj_ast['ast'].max()), xytext=(mj_ast_max - 0.7, mj_ast['ast'].max() - 25), color = 'red')
 
 ax.legend()
 
