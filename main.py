@@ -166,7 +166,7 @@ ax.legend(fancybox = True, framealpha = 1, shadow = True, borderpad = 1)
 st.pyplot(fig = fig, clear_figure = True)
 
 st.markdown('---')
-st.subheader('Regression Plot')
+st.subheader('Player Points Regression Plot')
 
 # REG PLOT RADIO BTN
 
@@ -191,3 +191,64 @@ elif player_input == 'Kobe Bryant':
     plot_reg_plot(kobe)
 else:
     plot_reg_plot(curry)
+
+st.markdown('---')
+# --- Question 3 --- Assists
+
+#Gather assist data from each players full career.
+
+def assist_data(player):
+  lbj = player_total[player_total['player'] == player]
+  lbj = lbj.loc[:, ['season', 'ast']]
+  lbj = lbj.sort_values(by = ['season'], ascending = True)
+  lbj = lbj.reset_index(drop=True)
+  return lbj
+
+kareem_ast = assist_data('Kareem Abdul-Jabbar')
+lebron_ast = assist_data('LeBron James')
+kobe_ast = assist_data('Kobe Bryant')
+curry_ast = assist_data('Stephen Curry')
+mj_ast = assist_data('Michael Jordan')
+
+labels = ['Y' + str(i) for i in range(1, 22)]
+print(labels)
+
+#Gather max assists from each player index to plot on X axis.
+
+lebron_ast_max = lebron_ast['ast'].idxmax()
+kareem_ast_max = kareem_ast['ast'].idxmax()
+kobe_ast_max = kobe_ast['ast'].idxmax()
+curry_ast_max = curry_ast['ast'].idxmax()
+mj_ast_max = mj_ast['ast'].idxmax()
+
+#Plot assist data.
+
+fig = plt.figure(figsize = (16, 8))
+ax = fig.add_subplot()
+ax.set_xticks(lebron_ast.index) #LeBron / Kareem has longest playing career
+ax.set_xticklabels(labels)
+ax.set_xlabel('Nth Year')
+ax.set_ylabel('Assists per season')
+ax.set_title('Total Assists each year for each player.')
+
+sns.lineplot(data = lebron_ast, x = lebron_ast.index, y = lebron_ast['ast'], label = 'LeBron James')
+sns.lineplot(data = kareem_ast, x = kareem_ast.index, y = kareem_ast['ast'], label = 'Kareem Abdul-Jabbar')
+sns.lineplot(data = kobe_ast, x = kobe_ast.index, y = kobe_ast['ast'], label = 'Kobe Bryant')
+sns.lineplot(data = curry_ast, x = curry_ast.index, y = curry_ast['ast'], label = 'Stephen Curry')
+sns.lineplot(data = mj_ast, x = mj_ast.index, y = mj_ast['ast'], label = 'Michael Jordan')
+
+ax.scatter(lebron_ast_max, lebron_ast['ast'].max(), color='green', zorder=5, s = 60, marker = 'x')
+ax.scatter(kareem_ast_max, kareem_ast['ast'].max(), color='green', zorder=5, s = 60, marker = 'x')
+ax.scatter(kobe_ast_max, kobe_ast['ast'].max(), color='green', zorder=5, s = 60, marker = 'x')
+ax.scatter(curry_ast_max, curry_ast['ast'].max(), color='green', zorder=5, s = 60, marker = 'x')
+ax.scatter(mj_ast_max, mj_ast['ast'].max(), color='green', zorder=5, s = 60, marker = 'x')
+
+ax.annotate('LeBron James', xy=(lebron_ast_max, lebron_ast['ast'].max()), xytext=(lebron_ast_max - 0.73, lebron_ast['ast'].max() + 15))
+ax.annotate('Kareem Abdul-Jabbar', xy=(kareem_ast_max, kareem_ast['ast'].max()), xytext=(kareem_ast_max - 1, kareem_ast['ast'].max() + 15))
+ax.annotate('Kobe Bryant', xy=(kobe_ast_max, kobe_ast['ast'].max()), xytext=(kobe_ast_max - 0.6, kobe_ast['ast'].max() + 15))
+ax.annotate('Stephen Curry', xy=(curry_ast_max, curry_ast['ast'].max()), xytext=(curry_ast_max - 0.7, curry_ast['ast'].max() + 15))
+ax.annotate('Michael Jordan', xy=(mj_ast_max, mj_ast['ast'].max()), xytext=(mj_ast_max - 0.7, mj_ast['ast'].max() - 25))
+
+ax.legend()
+
+st.pyplot(fig = fig, clear_figure = True)
