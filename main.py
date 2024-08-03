@@ -6,4 +6,6 @@ import matplotlib.pyplot as plt
 player_total = pd.read_csv('Player Totals.csv')
 
 st.title('NBA Greatest of All Time Comparisons')
-st.subheader('LeBron James, Michael Jordan, Kareem Abdul-Jabbar, Kobe Bryant, Stephen Curry')
+st.subheader('Dataset: https://www.kaggle.com/datasets/rodneycarroll78/nba-stats-1980-2024?select=Player+Season+Info.csv ')
+
+st.dataframe(player_total, width = 600, height = 200)
