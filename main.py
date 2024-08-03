@@ -286,6 +286,7 @@ def chart_rebounds(player):
   ax.legend()
   return st.pyplot(fig = fig, clear_figure = True)
 
+st.subheader('Rebounds Plot (Defensive/Offensive)')
 player_option_reb = st.selectbox('Select a Player', ('LeBron James', 'Michael Jordan', 'Kareem Abdul-Jabbar', 'Kobe Bryant', 'Stephen Curry'), key = 'reb_key')
 
 if player_option_reb == 'LeBron James':
@@ -329,6 +330,8 @@ def chart_steals(player):
   ax.legend()
   return st.pyplot(fig = fig, clear_figure = True)
 
+
+st.subheader('Steals Plot')
 player_option_stl = st.selectbox('Select a Player', ('LeBron James', 'Michael Jordan', 'Kareem Abdul-Jabbar', 'Kobe Bryant', 'Stephen Curry'), key = 'stl_key')
 
 if player_option_stl == 'LeBron James':
