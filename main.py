@@ -165,6 +165,9 @@ ax.legend(fancybox = True, framealpha = 1, shadow = True, borderpad = 1)
 
 st.pyplot(fig = fig, clear_figure = True)
 
+st.markdown('---')
+st.subheader('Regression Plot')
+
 # REG PLOT RADIO BTN
 
 def plot_reg_plot(player):
