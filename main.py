@@ -299,6 +299,7 @@ elif player_option_reb == 'Kobe Bryant':
 else:
     chart_rebounds(curry_reb)
 
+st.markdown('---')
 # --- Question 5 --- Steals
 
 def steal_data(player):
@@ -316,7 +317,7 @@ curry_stl = steal_data('Stephen Curry')
 
 def chart_steals(player):
   player_name = player['player'][0]
-  
+
   fig = plt.figure(figsize = (16, 8))
   ax = fig.add_subplot()
   ax.set_xlabel('Season')
@@ -327,3 +328,16 @@ def chart_steals(player):
   ax.plot(player['season'], player['stl'], label = 'Steals per Season')
   ax.legend()
   return st.pyplot(fig = fig, clear_figure = True)
+
+player_option_stl = st.selectbox('Select a Player', ('LeBron James', 'Michael Jordan', 'Kareem Abdul-Jabbar', 'Kobe Byrant', 'Stephen Curry'))
+
+if player_option_stl == 'LeBron James':
+    chart_rebounds(lbj_stl)
+elif player_option_stl == 'Michael Jordan':
+    chart_rebounds(mj_stl)
+elif player_option_stl == 'Kareem Abdul-Jabbar':
+    chart_rebounds(kareem_stl)
+elif player_option_stl == 'Kobe Bryant':
+    chart_rebounds(kobe_stl)
+else:
+    chart_rebounds(curry_stl)
