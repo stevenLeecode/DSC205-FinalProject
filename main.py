@@ -156,11 +156,11 @@ curry_max = curry['pts'].idxmax()
 kobe_max = kobe['pts'].idxmax()
 
 # Plot the top scoring year as a dot
-ax.scatter(lbj_max, lbj['pts'].max(), color='gold', zorder=5, s = 60, marker = '.')
-ax.scatter(mj_max, mj['pts'].max(), color='red', zorder=5, s = 60, marker = '.')
-ax.scatter(kareem_max, kareem['pts'].max(), color='green', zorder=5, s = 60, marker = '.')
-ax.scatter(curry_max, curry['pts'].max(), color='purple', zorder=5, s = 60, marker = '.')
-ax.scatter(kobe_max, kobe['pts'].max(), color='blue', zorder=5, s = 60, marker = '.')
+ax.scatter(lbj_max, lbj['pts'].max(), color='gold', zorder=5, s = 90, marker = '.')
+ax.scatter(mj_max, mj['pts'].max(), color='red', zorder=5, s = 90, marker = '.')
+ax.scatter(kareem_max, kareem['pts'].max(), color='green', zorder=5, s = 90, marker = '.')
+ax.scatter(curry_max, curry['pts'].max(), color='purple', zorder=5, s = 90, marker = '.')
+ax.scatter(kobe_max, kobe['pts'].max(), color='blue', zorder=5, s = 90, marker = '.')
 
 #Annotate names directly on top of each point
 ax.annotate('LeBron James', xy=(lbj_max, lbj['pts'].max()), xytext=(lbj_max - 0.7, lbj['pts'].max() + 50), color = 'gold')
