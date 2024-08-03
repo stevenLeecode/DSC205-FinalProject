@@ -179,3 +179,11 @@ player_input = st.radio('Select a Player', ('LeBron James', 'Michael Jordan', 'K
 
 if player_input == 'LeBron James':
     plot_reg_plot(lbj)
+elif player_input == 'Michael Jordan':
+    plot_reg_plot(mj)
+elif player_input == 'Kareem Abdul-Jabbar':
+    plot_reg_plot(kareem)
+elif player_input == 'Kobe Bryant':
+    plot_reg_plot(kobe)
+else:
+    plot_reg_plot(curry)
