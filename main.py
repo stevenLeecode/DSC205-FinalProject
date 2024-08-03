@@ -344,3 +344,22 @@ elif player_option_stl == 'Kobe Bryant':
     chart_steals(kobe_stl)
 else:
     chart_steals(curry_stl)
+
+def chart_steals_overlap(players):
+    fig = plt.figure(figsize=(16, 8))
+    ax = fig.add_subplot()
+    ax.set_xlabel('Season')
+    ax.set_ylabel('Steals per Season')
+    ax.set_title('Total Steals each season for each player.')
+    ax.set_xticks([1965, 1970, 1980, 1990, 2000, 2010, 2020])
+
+    for player in players:
+        player_name = player['player'][0]
+        ax.plot(player['season'], player['stl'], label=player_name)
+
+    ax.legend()
+    return st.pyplot(fig = fig, clear_figure = True)
+
+# Assuming curry_stl, lbj_stl, mj_stl, kobe_stl, and kareem_stl are already defined
+players = [curry_stl, lbj_stl, mj_stl, kobe_stl, kareem_stl]
+chart_steals_overlap(players)
