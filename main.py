@@ -95,27 +95,27 @@ st.pyplot(fig = fig, clear_figure = True)
 
 #Gather player data to eventually plot
 lbj = player_total[player_total['player'] == 'LeBron James']
-lbj = lbj.loc[:, ['season', 'pts']]
+lbj = lbj.loc[:, ['player', 'season', 'pts']]
 lbj = lbj.sort_values(by = ['season'], ascending = True)
 lbj = lbj.reset_index(drop=True)
 
 mj = player_total[player_total['player'] == 'Michael Jordan']
-mj = mj.loc[:, ['season', 'pts']]
+mj = mj.loc[:, ['player', 'season', 'pts']]
 mj = mj.sort_values(by = ['season'], ascending = True)
 mj = mj.reset_index(drop=True)
 
 kareem = player_total[player_total['player'] == 'Kareem Abdul-Jabbar']
-kareem = kareem.loc[:, ['season', 'pts']]
+kareem = kareem.loc[:, ['player', 'season', 'pts']]
 kareem = kareem.sort_values(by = ['season'], ascending = True)
 kareem = kareem.reset_index(drop=True)
 
 curry = player_total[player_total['player'] == 'Stephen Curry']
-curry = curry.loc[:, ['season', 'pts']]
+curry = curry.loc[:, ['player', 'season', 'pts']]
 curry = curry.sort_values(by = ['season'], ascending = True)
 curry = curry.reset_index(drop=True)
 
 kobe = player_total[player_total['player'] == 'Kobe Bryant']
-kobe = kobe.loc[:, ['season', 'pts']]
+kobe = kobe.loc[:, ['player', 'season', 'pts']]
 kobe = kobe.sort_values(by = ['season'], ascending = True)
 kobe = kobe.reset_index(drop=True)
 
