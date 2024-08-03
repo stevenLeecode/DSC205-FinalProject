@@ -195,6 +195,7 @@ else:
 st.markdown('---')
 # --- Question 3 --- Assists
 
+st.subheader('Assists comparison')
 #Gather assist data from each players full career.
 
 def assist_data(player):
@@ -253,10 +254,47 @@ ax.legend()
 
 st.pyplot(fig = fig, clear_figure = True)
 
-'''
-ax.scatter(lbj_max, lbj['pts'].max(), color='gold', zorder=5, s = 90, marker = '.')
-ax.scatter(mj_max, mj['pts'].max(), color='red', zorder=5, s = 90, marker = '.')
-ax.scatter(kareem_max, kareem['pts'].max(), color='green', zorder=5, s = 90, marker = '.')
-ax.scatter(curry_max, curry['pts'].max(), color='purple', zorder=5, s = 90, marker = '.')
-ax.scatter(kobe_max, kobe['pts'].max(), color='blue', zorder=5, s = 90, marker = '.')
-'''
+# --- Question 4 --- Defensive/Offensive Rebounds
+st.markdown('---')
+
+def rebound_data(player):
+  player_reb = player_total[player_total['player'] == player]
+  player_reb = player_reb.loc[:, ['player','season', 'orb', 'drb']]
+  player_reb = player_reb.sort_values(by = ['season'], ascending = True)
+  player_reb = player_reb.reset_index(drop=True)
+  return player_reb
+
+lbj_reb = rebound_data('LeBron James')
+mj_reb = rebound_data('Michael Jordan')
+kareem_reb = rebound_data('Kareem Abdul-Jabbar')
+kobe_reb = rebound_data('Kobe Bryant')
+curry_reb = rebound_data('Stephen Curry')
+
+def chart_rebounds(player):
+
+  player_name = player['player'][0]
+
+  fig = plt.figure(figsize = (16, 8))
+  ax = fig.add_subplot()
+  ax.set_xlabel('Season')
+  ax.set_ylabel('Rebounds per Season')
+  ax.set_title('Total Rebounds each season for {}.'.format(player_name))
+
+  ax.set_xticks(player['season'])
+  ax.plot(player['season'], player['drb'], label = 'Defensive Rebounds')
+  ax.plot(player['season'], player['orb'], label = 'Offensive Rebounds')
+  ax.legend()
+  return st.pyplot(fig = fig, clear_figure = True)
+
+player_option_reb = st.selectbox('Select a Player', ('LeBron James', 'Michael Jordan', 'Kareem Abdul-Jabbar', 'Kobe Byrant', 'Stephen Curry'))
+
+if player_option_reb == 'LeBron James':
+    chart_rebounds(lbj_reb)
+elif player_option_reb == 'Michael Jordan':
+    chart_rebounds(mj_reb)
+elif player_option_reb == 'Kareem Abdul-Jabbar':
+    chart_rebounds(kareem_reb)
+elif player_option_reb == 'Kobe Bryant':
+    chart_rebounds(kobe_reb)
+else:
+    chart_rebounds(curry_reb)
