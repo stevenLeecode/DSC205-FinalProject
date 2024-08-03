@@ -363,3 +363,43 @@ def chart_steals_overlap(players):
 # Assuming curry_stl, lbj_stl, mj_stl, kobe_stl, and kareem_stl are already defined
 players = [curry_stl, lbj_stl, mj_stl, kobe_stl, kareem_stl]
 chart_steals_overlap(players)
+
+# --- Question 6 --- Blocks
+
+def block_data(player):
+  player_stl = player_total[player_total['player'] == player]
+  player_stl = player_stl.loc[:, ['player','season', 'blk']]
+  player_stl = player_stl.sort_values(by = ['season'], ascending = True)
+  player_stl = player_stl.reset_index(drop=True)
+  return player_stl
+
+lbj_blk = block_data('LeBron James')
+mj_blk = block_data('Michael Jordan')
+kareem_blk = block_data('Kareem Abdul-Jabbar')
+kobe_blk = block_data('Kobe Bryant')
+curry_blk = block_data('Stephen Curry')
+
+#Kareem is missing 4 values
+kareem_blk.isna().sum().sum()
+kareem_blk_no_NaN = kareem_blk.dropna()
+kareem_blk_no_NaN.reset_index(drop=True, inplace=True) #Reset index to grab players name
+
+def chart_blocks(player):
+
+  player_name = player['player'][0]
+
+  fig = plt.figure(figsize = (16, 8))
+  ax = fig.add_subplot()
+  ax.set_xlabel('Season')
+  ax.set_ylabel('blocks per Season')
+  ax.set_title('Total blocks each season for {}.'.format(player_name))
+
+  ax.set_xticks(player['season'])
+  ax.plot(player['season'], player['blk'], label = 'Blocks per season')
+  ax.legend()
+  return st.pyplot(fig = fig, clear_figure = True)
+
+
+player_multiselect_blk = st.multiselect('Select two players to compare block statistics',
+    ['LeBron James', 'Michael Jordan', 'Kobe Bryant', 'Kareem Abdul-Jabbar', 'Stephen Curry'],
+    ['LeBron James', 'Michael Jordan', 'Kobe Bryant', 'Kareem Abdul-Jabbar', 'Stephen Curry'],)
