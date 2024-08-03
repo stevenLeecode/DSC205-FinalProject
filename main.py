@@ -298,3 +298,32 @@ elif player_option_reb == 'Kobe Bryant':
     chart_rebounds(kobe_reb)
 else:
     chart_rebounds(curry_reb)
+
+# --- Question 5 --- Steals
+
+def steal_data(player):
+  player_stl = player_total[player_total['player'] == player]
+  player_stl = player_stl.loc[:, ['player','season', 'stl']]
+  player_stl = player_stl.sort_values(by = ['season'], ascending = True)
+  player_stl = player_stl.reset_index(drop=True)
+  return player_stl
+
+lbj_stl = steal_data('LeBron James')
+mj_stl = steal_data('Michael Jordan')
+kareem_stl = steal_data('Kareem Abdul-Jabbar')
+kobe_stl = steal_data('Kobe Bryant')
+curry_stl = steal_data('Stephen Curry')
+
+def chart_steals(player):
+  player_name = player['player'][0]
+  
+  fig = plt.figure(figsize = (16, 8))
+  ax = fig.add_subplot()
+  ax.set_xlabel('Season')
+  ax.set_ylabel('Steals per Season')
+  ax.set_title('Total Steals each season for {}.'.format(player_name))
+
+  ax.set_xticks(player['season'])
+  ax.plot(player['season'], player['stl'], label = 'Steals per Season')
+  ax.legend()
+  return st.pyplot(fig = fig, clear_figure = True)
