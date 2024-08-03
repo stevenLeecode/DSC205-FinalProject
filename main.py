@@ -131,16 +131,6 @@ ax.set_xlabel('Nth Year')
 ax.set_ylabel('Points')
 ax.set_title('Total Scoring each year for each player.')
 
-'''
-Color code for each player:
-
-LeBron - Gold
-Michael Jordan - red
-Kareem - green
-kobe - blue
-steph curry - purple
-'''
-
 
 ax.plot(lbj.index, lbj['pts'], label = 'LeBron James', color = 'gold')
 ax.plot(mj.index, mj['pts'], label = 'Michael Jordan', color = 'red')
