@@ -170,9 +170,8 @@ st.pyplot(fig = fig, clear_figure = True)
 def plot_reg_plot(player):
   player_name = player['player'][0]
   fig = plt.figure(figsize = (16, 8))
-  sns.regplot(x = player['season'], y = player['pts'], line_kws = {'color': 'red'})
+  sns.regplot(x = player['season'], y = player['pts'], line_kws = {'color': 'red'}).set_title(f'{player_name} Regression Total Points Per Season')
   plt.xticks(player['season'])
-  ax.set_title(f'{player_name} Regression Total Points Per Season')
   #Show average value using axvline
   #ax.axhline(player['pts'].mean(), color='black', linestyle='dashed', linewidth=1)
   return st.pyplot(fig = fig, clear_figure = True)
