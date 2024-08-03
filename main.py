@@ -332,12 +332,12 @@ def chart_steals(player):
 player_option_stl = st.selectbox('Select a Player', ('LeBron James', 'Michael Jordan', 'Kareem Abdul-Jabbar', 'Kobe Bryant', 'Stephen Curry'), key = 'stl_key')
 
 if player_option_stl == 'LeBron James':
-    chart_rebounds(lbj_stl)
+    chart_steals(lbj_stl)
 elif player_option_stl == 'Michael Jordan':
-    chart_rebounds(mj_stl)
+    chart_steals(mj_stl)
 elif player_option_stl == 'Kareem Abdul-Jabbar':
-    chart_rebounds(kareem_stl)
+    chart_steals(kareem_stl)
 elif player_option_stl == 'Kobe Bryant':
-    chart_rebounds(kobe_stl)
+    chart_steals(kobe_stl)
 else:
-    chart_rebounds(curry_stl)
+    chart_steals(curry_stl)
