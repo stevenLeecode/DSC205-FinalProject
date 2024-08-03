@@ -163,3 +163,20 @@ ax.annotate('Kobe Bryant ({kobe_max_pts})'.format(kobe_max_pts = kobe['pts'].max
 ax.legend(fancybox = True, framealpha = 1, shadow = True, borderpad = 1)
 
 st.pyplot(fig = fig, clear_figure = True)
+
+# REG PLOT RADIO BTN
+
+def plot_reg_plot(player):
+  fig = plt.figure(figsize = (16, 8))
+  sns.regplot(x = player['season'], y = player['pts'], line_kws = {'color': 'red'})
+  plt.xticks(player['season'])
+  #Show average value using axvline
+  ax = plt.gca()
+  #ax.axhline(player['pts'].mean(), color='black', linestyle='dashed', linewidth=1)
+  plt.show()
+
+player_input = st.radio('Select a Player', ('LeBron James', 'Michael Jordan', 'Kareem Abdul-Jabbar', 'Kobe Byrant', 'Stephen Curry'))
+
+if player_input == 'LeBron James':
+    plot_reg_plot(lbj)
+    st.pyplot(fig = fig, clear_figure = True)
