@@ -247,7 +247,7 @@ ax.annotate('LeBron James', xy=(lebron_ast_max, lebron_ast['ast'].max()), xytext
 ax.annotate('Kareem Abdul-Jabbar', xy=(kareem_ast_max, kareem_ast['ast'].max()), xytext=(kareem_ast_max - 1, kareem_ast['ast'].max() + 15), color = 'green')
 ax.annotate('Kobe Bryant', xy=(kobe_ast_max, kobe_ast['ast'].max()), xytext=(kobe_ast_max - 0.6, kobe_ast['ast'].max() + 15), color = 'blue')
 ax.annotate('Stephen Curry', xy=(curry_ast_max, curry_ast['ast'].max()), xytext=(curry_ast_max - 0.7, curry_ast['ast'].max() + 15), color = 'purple')
-ax.annotate('MJ', xy=(mj_ast_max, mj_ast['ast'].max()), xytext=(mj_ast_max - 0.7, mj_ast['ast'].max() - 25), color = 'red')
+ax.annotate('MJ', xy=(mj_ast_max, mj_ast['ast'].max()), xytext=(mj_ast_max, mj_ast['ast'].max() - 40), color = 'red')
 
 ax.legend()
 
