@@ -10,6 +10,8 @@ st.subheader('NBA Players Dataset')
 
 st.dataframe(player_total, width = 800, height = 200)
 
+# --- Question 1 ---
+
 #Get lebrons pts for the his first 3 seasons into a dataframe.
 #Rookie season was 2003, so include seasons 04', 05', 06'.
 lbj = player_total[(player_total['player'] == 'LeBron James') & (player_total['season'] < 2007)]
@@ -85,5 +87,79 @@ ax.annotate('Michael Jordan', xy=(mj.index[0], mj['pts'][0]), xytext=(mj.index[0
 ax.annotate('Kareem Abdul-Jabbar', xy=(kareem.index[0], kareem['pts'][0]), xytext=(kareem.index[0], kareem['pts'][0] + 125), color = 'green')
 ax.annotate('Kobe Bryant', xy=(kobe.index[0], kobe['pts'][0]), xytext=(kobe.index[0], kobe['pts'][0] - 100), color = 'blue')
 ax.annotate('Stephen Curry', xy=(curry.index[0], curry['pts'][0]), xytext=(curry.index[0], curry['pts'][0] - 100), color = 'purple')
+
+st.pyplot(fig = fig, clear_figure = True)
+
+# --- Question 2 ---
+
+#Gather player data to eventually plot
+lbj = player_total[player_total['player'] == 'LeBron James']
+lbj = lbj.loc[:, ['season', 'pts']]
+lbj = lbj.sort_values(by = ['season'], ascending = True)
+lbj = lbj.reset_index(drop=True)
+
+mj = player_total[player_total['player'] == 'Michael Jordan']
+mj = mj.loc[:, ['season', 'pts']]
+mj = mj.sort_values(by = ['season'], ascending = True)
+mj = mj.reset_index(drop=True)
+
+kareem = player_total[player_total['player'] == 'Kareem Abdul-Jabbar']
+kareem = kareem.loc[:, ['season', 'pts']]
+kareem = kareem.sort_values(by = ['season'], ascending = True)
+kareem = kareem.reset_index(drop=True)
+
+curry = player_total[player_total['player'] == 'Stephen Curry']
+curry = curry.loc[:, ['season', 'pts']]
+curry = curry.sort_values(by = ['season'], ascending = True)
+curry = curry.reset_index(drop=True)
+
+kobe = player_total[player_total['player'] == 'Kobe Bryant']
+kobe = kobe.loc[:, ['season', 'pts']]
+kobe = kobe.sort_values(by = ['season'], ascending = True)
+kobe = kobe.reset_index(drop=True)
+
+#Plot
+
+labels = ['Y' + str(i) for i in range(1, 22)]
+print(labels)
+
+fig = plt.figure(figsize = (16, 8))
+ax = fig.add_subplot()
+ax.set_xticks(lbj.index)
+ax.set_xticklabels(labels)
+ax.set_xlabel('Nth Year')
+ax.set_ylabel('Points')
+ax.set_title('Total Scoring each year for each player.')
+
+
+ax.plot(lbj.index, lbj['pts'], label = 'LeBron James')
+ax.plot(mj.index, mj['pts'], label = 'Michael Jordan')
+ax.plot(kareem.index, kareem['pts'], label = 'Kareem Abdul-Jabbar')
+ax.plot(curry.index, curry['pts'], label = 'Stephen Curry')
+ax.plot(kobe.index, kobe['pts'], label = 'Kobe Bryant')
+
+#Get top scoring seasons index to plot on scatter
+lbj_max = lbj['pts'].idxmax()
+mj_max = mj['pts'].idxmax()
+kareem_max = kareem['pts'].idxmax()
+curry_max = curry['pts'].idxmax()
+kobe_max = kobe['pts'].idxmax()
+
+# Plot the top scoring year as a dot
+ax.scatter(lbj_max, lbj['pts'].max(), color='green', zorder=5, s = 60, marker = 'x')
+ax.scatter(mj_max, mj['pts'].max(), color='green', zorder=5, s = 60, marker = 'x')
+ax.scatter(kareem_max, kareem['pts'].max(), color='green', zorder=5, s = 60, marker = 'x')
+ax.scatter(curry_max, curry['pts'].max(), color='green', zorder=5, s = 60, marker = 'x')
+ax.scatter(kobe_max, kobe['pts'].max(), color='green', zorder=5, s = 60, marker = 'x')
+
+#Annotate names directly on top of each point
+ax.annotate('LeBron James', xy=(lbj_max, lbj['pts'].max()), xytext=(lbj_max - 0.7, lbj['pts'].max() + 50))
+ax.annotate('Michael Jordan', xy=(mj_max, mj['pts'].max()), xytext=(mj_max - 0.76, mj['pts'].max() + 50))
+ax.annotate('Kareem Abdul-Jabbar', xy=(kareem_max, kareem['pts'].max()), xytext=(kareem_max - 1, kareem['pts'].max() + 50))
+ax.annotate('Stephen Curry', xy=(curry_max, curry['pts'].max()), xytext=(curry_max - 0.775, curry['pts'].max() + 50))
+ax.annotate('Kobe Bryant', xy=(kobe_max, kobe['pts'].max()), xytext=(kobe_max - 0.65, kobe['pts'].max() + 50))
+
+
+ax.legend(fancybox = True, framealpha = 1, shadow = True, borderpad = 1)
 
 st.pyplot(fig = fig, clear_figure = True)
