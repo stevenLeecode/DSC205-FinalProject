@@ -8,7 +8,7 @@ player_total = pd.read_csv('Player Totals.csv')
 st.title('NBA Greatest of All Time Comparisons - Steven Lee')
 st.subheader('NBA Players Dataset')
 
-st.dataframe(player_total, width = 600, height = 200)
+st.dataframe(player_total, width = 800, height = 200)
 
 #Get lebrons pts for the his first 3 seasons into a dataframe.
 #Rookie season was 2003, so include seasons 04', 05', 06'.
