@@ -174,7 +174,7 @@ def plot_reg_plot(player):
   #Show average value using axvline
   ax = plt.gca()
   #ax.axhline(player['pts'].mean(), color='black', linestyle='dashed', linewidth=1)
-  plt.show()
+  return fig
 
 player_input = st.radio('Select a Player', ('LeBron James', 'Michael Jordan', 'Kareem Abdul-Jabbar', 'Kobe Byrant', 'Stephen Curry'))
 
