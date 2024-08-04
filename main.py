@@ -142,7 +142,7 @@ kobe_max = kobe['pts'].idxmax()
 
 #Annotate names directly on top of each point
 ax.annotate('LeBron James ({lbj_max_pts})'.format(lbj_max_pts = lbj['pts'].max()), xy=(lbj_max, lbj['pts'].max()), xytext=(lbj_max - 0.7, lbj['pts'].max() + 50), color = 'gold')
-ax.annotate('Michael Jordan ({mj_max_pts})'.format(mj_max_pts = mj['pts'].max()), xy=(mj_max, mj['pts'].max()), xytext=(mj_max - 0.76, mj['pts'].max() + 50), color = 'red')
+ax.annotate('Michael Jord ({mj_max_pts})'.format(mj_max_pts = mj['pts'].max()), xy=(mj_max, mj['pts'].max()), xytext=(mj_max - 0.76, mj['pts'].max() + 50), color = 'red')
 ax.annotate('Kareem Abdul-Jabbar ({kareem_max_pts})'.format(kareem_max_pts = kareem['pts'].max()), xy=(kareem_max, kareem['pts'].max()), xytext=(kareem_max - 1, kareem['pts'].max() + 50), color = 'green')
 ax.annotate('Stephen Curry ({curry_max_pts})'.format(curry_max_pts = curry['pts'].max()), xy=(curry_max, curry['pts'].max()), xytext=(curry_max - 0.775, curry['pts'].max() + 50), color = 'purple', zorder = 10)
 ax.annotate('Kobe Bryant ({kobe_max_pts})'.format(kobe_max_pts = kobe['pts'].max()), xy=(kobe_max, kobe['pts'].max()), xytext=(kobe_max - 0.65, kobe['pts'].max() + 50), color = 'blue')
