@@ -97,48 +97,63 @@ st.pyplot(fig = fig, clear_figure = True)
 
 
 #Gather player data to eventually plot
-def get_scoring_data(player):
-  player = player_total[player_total['player'] == player]
-  player = player.loc[:, ['player','season', 'pts']]
-  player = player.sort_values(by = ['season'], ascending = True)
-  player = player.reset_index(drop=True)
-  return player
+lbj = player_total[player_total['player'] == 'LeBron James']
+lbj = lbj.loc[:, ['player', 'season', 'pts']]
+lbj = lbj.sort_values(by = ['season'], ascending = True)
+lbj = lbj.reset_index(drop=True)
 
-lbj_scoring = get_scoring_data('LeBron James')
-mj_scoring = get_scoring_data('Michael Jordan')
-kareem_scoring = get_scoring_data('Kareem Abdul-Jabbar')
-kobe_scoring = get_scoring_data('Kobe Bryant')
-curry_scoring = get_scoring_data('Stephen Curry')
+mj = player_total[player_total['player'] == 'Michael Jordan']
+mj = mj.loc[:, ['player', 'season', 'pts']]
+mj = mj.sort_values(by = ['season'], ascending = True)
+mj = mj.reset_index(drop=True)
+
+kareem = player_total[player_total['player'] == 'Kareem Abdul-Jabbar']
+kareem = kareem.loc[:, ['player', 'season', 'pts']]
+kareem = kareem.sort_values(by = ['season'], ascending = True)
+kareem = kareem.reset_index(drop=True)
+
+curry = player_total[player_total['player'] == 'Stephen Curry']
+curry = curry.loc[:, ['player', 'season', 'pts']]
+curry = curry.sort_values(by = ['season'], ascending = True)
+curry = curry.reset_index(drop=True)
+
+kobe = player_total[player_total['player'] == 'Kobe Bryant']
+kobe = kobe.loc[:, ['player', 'season', 'pts']]
+kobe = kobe.sort_values(by = ['season'], ascending = True)
+kobe = kobe.reset_index(drop=True)
 
 #Plot
 
-#Plotting
 labels = ['Y' + str(i) for i in range(1, 22)]
 
 fig = plt.figure(figsize = (16, 8))
 ax = fig.add_subplot()
-ax.set_xlabel('Season')
-ax.set_xticks(lbj_scoring.index) #LeBron has longest season out of all players
+ax.set_xticks(lbj.index)
 ax.set_xticklabels(labels)
+ax.set_xlabel('Nth Year')
 ax.set_ylabel('Points')
-ax.set_title('Total Scoring each season for each player')
+ax.set_title('Total Scoring each year for each player.')
 
-def chart_scoring(player, figure, line_color):
-  ax.plot(player.index, player['pts'], label = player['player'][0], color = line_color)
-  ax.scatter(player['pts'].idxmax(), player['pts'].max(), color=line_color, zorder=5, s = 60, marker = '.')
-  ax.legend(fancybox = True, framealpha = 1, shadow = True, borderpad = 1)
-  
-curry_scoring_chart = chart_scoring(curry_scoring, fig, 'purple')
-lbj_scoring_chart = chart_scoring(lbj_scoring, fig, 'gold')
-mj_scoring_chart = chart_scoring(mj_scoring, fig, 'red')
-kareem_scoring_chart = chart_scoring(kareem_scoring, fig, 'green')
-kobe_scoring_chart = chart_scoring(kobe_scoring, fig, 'blue')
 
+ax.plot(lbj.index, lbj['pts'], label = 'LeBron James', color = 'gold')
+ax.plot(mj.index, mj['pts'], label = 'Michael Jordan', color = 'red')
+ax.plot(kareem.index, kareem['pts'], label = 'Kareem Abdul-Jabbar', color = 'green')
+ax.plot(curry.index, curry['pts'], label = 'Stephen Curry', color = 'purple')
+ax.plot(kobe.index, kobe['pts'], label = 'Kobe Bryant', color = 'blue')
+
+#Get top scoring seasons index to plot on scatter
 lbj_max = lbj['pts'].idxmax()
 mj_max = mj['pts'].idxmax()
 kareem_max = kareem['pts'].idxmax()
 curry_max = curry['pts'].idxmax()
 kobe_max = kobe['pts'].idxmax()
+
+# Plot the top scoring year as a dot
+ax.scatter(lbj_max, lbj['pts'].max(), color='gold', zorder=5, s = 90, marker = '.')
+ax.scatter(mj_max, mj['pts'].max(), color='red', zorder=5, s = 90, marker = '.')
+ax.scatter(kareem_max, kareem['pts'].max(), color='green', zorder=5, s = 90, marker = '.')
+ax.scatter(curry_max, curry['pts'].max(), color='purple', zorder=5, s = 90, marker = '.')
+ax.scatter(kobe_max, kobe['pts'].max(), color='blue', zorder=5, s = 90, marker = '.')
 
 #Annotate names directly on top of each point
 ax.annotate('LeBron James ({lbj_max_pts})'.format(lbj_max_pts = lbj['pts'].max()), xy=(lbj_max, lbj['pts'].max()), xytext=(lbj_max - 0.7, lbj['pts'].max() + 50), color = 'gold')
@@ -147,6 +162,8 @@ ax.annotate('Kareem Abdul-Jabbar ({kareem_max_pts})'.format(kareem_max_pts = kar
 ax.annotate('Stephen Curry ({curry_max_pts})'.format(curry_max_pts = curry['pts'].max()), xy=(curry_max, curry['pts'].max()), xytext=(curry_max - 0.775, curry['pts'].max() + 50), color = 'purple', zorder = 10)
 ax.annotate('Kobe Bryant ({kobe_max_pts})'.format(kobe_max_pts = kobe['pts'].max()), xy=(kobe_max, kobe['pts'].max()), xytext=(kobe_max - 0.65, kobe['pts'].max() + 50), color = 'blue')
 
+
+ax.legend(fancybox = True, framealpha = 1, shadow = True, borderpad = 1)
 
 st.pyplot(fig = fig, clear_figure = True)
 
