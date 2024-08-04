@@ -397,7 +397,7 @@ def chart_blocks(player):
   plot = ax.plot(player['season'], player['blk'], label = 'Blocks per season')
   ax.legend()
   #return st.pyplot(fig = fig, clear_figure = True)
-  return fig, plot
+  return st.pyplot(fig = fig, clear_figure = True)
 
 
 player_multiselect_blk = st.multiselect('Select two players to compare block statistics',
@@ -405,30 +405,28 @@ player_multiselect_blk = st.multiselect('Select two players to compare block sta
 
 col1, col2 = st.columns(2)
 
-if len(player_multiselect_blk) == 2:
-    if player_multiselect_blk[0] == 'LeBron James':
-        with col1:
+with col1:
+    if len(player_multiselect_blk) == 2:
+        if player_multiselect_blk[0] == 'LeBron James':
             chart_blocks(lbj_blk)
-            st.pyplot(plot, clear_figure = True)
-    elif player_multiselect_blk[0] == 'Michael Jordan':
-        chart_blocks(mj_blk)
-    elif player_multiselect_blk[0] == 'Kobe Bryant':
-        chart_blocks(kobe_blk)
-    elif player_multiselect_blk[0] == 'Kareem Abdul-Jabbar':
-        chart_blocks(kareem_blk)
-    else:
-        chart_blocks(curry_blk)
-
-if len(player_multiselect_blk) == 2:
-    if player_multiselect_blk[1] == 'LeBron James':
-        chart_blocks(lbj_blk)
-    elif player_multiselect_blk[1] == 'Michael Jordan':
-        with col2:
+        elif player_multiselect_blk[0] == 'Michael Jordan':
             chart_blocks(mj_blk)
-            st.pyplot(plot, clear_figure = True)
-    elif player_multiselect_blk[1] == 'Kobe Bryant':
-        chart_blocks(kobe_blk)
-    elif player_multiselect_blk[1] == 'Kareem Abdul-Jabbar':
-        chart_blocks(kareem_blk)
-    else:
-        chart_blocks(curry_blk)
+        elif player_multiselect_blk[0] == 'Kobe Bryant':
+            chart_blocks(kobe_blk)
+        elif player_multiselect_blk[0] == 'Kareem Abdul-Jabbar':
+            chart_blocks(kareem_blk)
+        else:
+            chart_blocks(curry_blk)
+
+with col2:
+    if len(player_multiselect_blk) == 2:
+        if player_multiselect_blk[1] == 'LeBron James':
+            chart_blocks(lbj_blk)
+        elif player_multiselect_blk[1] == 'Michael Jordan':
+                chart_blocks(mj_blk)
+        elif player_multiselect_blk[1] == 'Kobe Bryant':
+            chart_blocks(kobe_blk)
+        elif player_multiselect_blk[1] == 'Kareem Abdul-Jabbar':
+            chart_blocks(kareem_blk)
+        else:
+            chart_blocks(curry_blk)
