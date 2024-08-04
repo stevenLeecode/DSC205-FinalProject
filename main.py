@@ -397,16 +397,20 @@ def chart_blocks(player):
   ax.set_xticks(player['season'])
   ax.plot(player['season'], player['blk'], label = 'Blocks per season')
   ax.legend()
-  return st.pyplot(fig = fig, clear_figure = True)
+  #return st.pyplot(fig = fig, clear_figure = True)
+  return fig
 
 
 player_multiselect_blk = st.multiselect('Select two players to compare block statistics',
     ['LeBron James', 'Michael Jordan', 'Kobe Bryant', 'Kareem Abdul-Jabbar', 'Stephen Curry'], max_selections = 3)
 
+col1, col2 = st.columns(2)
 
 if len(player_multiselect_blk) == 2:
     if player_multiselect_blk[0] == 'LeBron James':
-        chart_blocks(lbj_blk)
+        with col1:
+            chart_blocks(lbj_blk)
+            st.pyplot(fig = fig, clear_figure = True)
     elif player_multiselect_blk[0] == 'Michael Jordan':
         chart_blocks(mj_blk)
     elif player_multiselect_blk[0] == 'Kobe Bryant':
@@ -420,7 +424,9 @@ if len(player_multiselect_blk) == 2:
     if player_multiselect_blk[1] == 'LeBron James':
         chart_blocks(lbj_blk)
     elif player_multiselect_blk[1] == 'Michael Jordan':
-        chart_blocks(mj_blk)
+        with col2:
+            chart_blocks(mj_blk)
+            st.pyplot(fig = fig, clear_figure = True)
     elif player_multiselect_blk[1] == 'Kobe Bryant':
         chart_blocks(kobe_blk)
     elif player_multiselect_blk[1] == 'Kareem Abdul-Jabbar':
