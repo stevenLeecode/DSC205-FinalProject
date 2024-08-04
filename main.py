@@ -6,7 +6,8 @@ import seaborn as sns
 #https://raw.githubusercontent.com/stevenLeecode/DSC205-FinalProject/main/Player%20Totals.csv
 player_total = pd.read_csv('Player Totals.csv')
 
-st.title('NBA Greatest of All Time Comparisons - Steven Lee')
+#st.title('NBA Greatest of All Time Comparisons - Steven Lee')
+st.markdown("<h2 style='text-align: center; color: black;'> NBA Greatest of All Time Comparisons </h2>", unsafe_allow_html=True)
 st.subheader('NBA Players Dataset')
 
 st.dataframe(player_total, width = 800, height = 200)
