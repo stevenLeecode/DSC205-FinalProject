@@ -122,7 +122,6 @@ kobe = kobe.reset_index(drop=True)
 #Plot
 
 labels = ['Y' + str(i) for i in range(1, 22)]
-print(labels)
 
 fig = plt.figure(figsize = (16, 8))
 ax = fig.add_subplot()
