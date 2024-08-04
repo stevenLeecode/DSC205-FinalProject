@@ -134,18 +134,18 @@ mj_scoring_chart = chart_total_scoring(mj_scoring, fig, 'red')
 kareem_scoring_chart = chart_total_scoring(kareem_scoring, fig, 'green')
 kobe_scoring_chart = chart_total_scoring(kobe_scoring, fig, 'blue')
 
-lbj_max = lbj['pts'].idxmax()
-mj_max = mj['pts'].idxmax()
-kareem_max = kareem['pts'].idxmax()
-curry_max = curry['pts'].idxmax()
-kobe_max = kobe['pts'].idxmax()
+lbj_max = lbj_scoring['pts'].idxmax()
+mj_max = mj_scoring['pts'].idxmax()
+kareem_max = kareem_scoring['pts'].idxmax()
+curry_max = curry_scoring['pts'].idxmax()
+kobe_max = kobe_scoring['pts'].idxmax()
 
 #Annotate names directly on top of each point
-ax.annotate('LeBron James ({lbj_max_pts})'.format(lbj_max_pts = lbj['pts'].max()), xy=(lbj_max, lbj['pts'].max()), xytext=(lbj_max - 0.7, lbj['pts'].max() + 50), color = 'gold')
-ax.annotate('Michael Jordan ({mj_max_pts})'.format(mj_max_pts = mj['pts'].max()), xy=(mj_max, mj['pts'].max()), xytext=(mj_max - 0.76, mj['pts'].max() + 50), color = 'red')
-ax.annotate('Kareem Abdul-Jabbar ({kareem_max_pts})'.format(kareem_max_pts = kareem['pts'].max()), xy=(kareem_max, kareem['pts'].max()), xytext=(kareem_max - 1, kareem['pts'].max() + 50), color = 'green')
-ax.annotate('Stephen Curry ({curry_max_pts})'.format(curry_max_pts = curry['pts'].max()), xy=(curry_max, curry['pts'].max()), xytext=(curry_max - 0.775, curry['pts'].max() + 50), color = 'purple', zorder = 10)
-ax.annotate('Kobe Bryant ({kobe_max_pts})'.format(kobe_max_pts = kobe['pts'].max()), xy=(kobe_max, kobe['pts'].max()), xytext=(kobe_max - 0.65, kobe['pts'].max() + 50), color = 'blue')
+ax.annotate('LeBron James ({lbj_max_pts})'.format(lbj_max_pts = lbj_scoring['pts'].max()), xy=(lbj_max, lbj_scoring['pts'].max()), xytext=(lbj_max - 0.7, lbj_scoring['pts'].max() + 50), color = 'gold')
+ax.annotate('Michael Jordan ({mj_max_pts})'.format(mj_max_pts = mj_scoring['pts'].max()), xy=(mj_max, mj_scoring['pts'].max()), xytext=(mj_max - 0.76, mj_scoring['pts'].max() + 50), color = 'red')
+ax.annotate('Kareem Abdul-Jabbar ({kareem_max_pts})'.format(kareem_max_pts = kareem_scoring['pts'].max()), xy=(kareem_max, kareem_scoring['pts'].max()), xytext=(kareem_max - 1, kareem_scoring['pts'].max() + 50), color = 'green')
+ax.annotate('Stephen Curry ({curry_max_pts})'.format(curry_max_pts = curry_scoring['pts'].max()), xy=(curry_max, curry_scoring['pts'].max()), xytext=(curry_max - 0.775, curry_scoring['pts'].max() + 50), color = 'purple', zorder = 10)
+ax.annotate('Kobe Bryant ({kobe_max_pts})'.format(kobe_max_pts = kobe_scoring['pts'].max()), xy=(kobe_max, kobe_scoring['pts'].max()), xytext=(kobe_max - 0.65, kobe_scoring['pts'].max() + 50), color = 'blue')
 
 st.pyplot(fig = fig, clear_figure = True)
 
