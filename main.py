@@ -167,12 +167,20 @@ ax.legend(fancybox = True, framealpha = 1, shadow = True, borderpad = 1)
 
 st.pyplot(fig = fig, clear_figure = True)
 
+goat_players = ['LeBron James', 'Michael Jordan', 'Kareem Abdul-Jabbar', 'Kobe Bryant', 'Stephen Curry']
 st.subheader('Select Players to plot their Points Scored per Year')
+for i in goat_players:
+    st.checkbox(i)
+'''
 lebron_checkbox = st.checkbox('LeBron James')
 mj_checkbox = st.checkbox('Michael Jordan')
 kareem_checkbox = st.checkbox('Kareem Abdul-Jabbar')
 kobe_checkbox = st.checkbox('Kobe Bryant')
 curry_checkbox = st.checkbox('Stephen Curry')
+'''
+
+
+
 
 
 
