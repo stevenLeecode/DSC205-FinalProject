@@ -409,7 +409,7 @@ if len(player_multiselect_blk) == 2:
     if player_multiselect_blk[0] == 'LeBron James':
         with col1:
             chart_blocks(lbj_blk)
-            st.pyplot(fig = fig, clear_figure = True)
+            st.pyplot(fig, clear_figure = True)
     elif player_multiselect_blk[0] == 'Michael Jordan':
         chart_blocks(mj_blk)
     elif player_multiselect_blk[0] == 'Kobe Bryant':
@@ -425,7 +425,7 @@ if len(player_multiselect_blk) == 2:
     elif player_multiselect_blk[1] == 'Michael Jordan':
         with col2:
             chart_blocks(mj_blk)
-            st.pyplot(fig = fig, clear_figure = True)
+            st.pyplot(fig, clear_figure = True)
     elif player_multiselect_blk[1] == 'Kobe Bryant':
         chart_blocks(kobe_blk)
     elif player_multiselect_blk[1] == 'Kareem Abdul-Jabbar':
