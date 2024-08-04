@@ -397,7 +397,7 @@ def chart_blocks(player):
   plot = ax.plot(player['season'], player['blk'], label = 'Blocks per season')
   ax.legend()
   #return st.pyplot(fig = fig, clear_figure = True)
-  return st.pyplot(fig = fig, clear_figure = True, use_container_width=False)
+  return st.pyplot(fig = fig, clear_figure = True)
 
 
 player_multiselect_blk = st.multiselect('Select two players to compare block statistics',
