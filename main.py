@@ -403,5 +403,27 @@ def chart_blocks(player):
 player_multiselect_blk = st.multiselect('Select two players to compare block statistics',
     ['LeBron James', 'Michael Jordan', 'Kobe Bryant', 'Kareem Abdul-Jabbar', 'Stephen Curry'], max_selections = 2)
 
+
 if len(player_multiselect_blk) == 2:
-    st.write(player_multiselect_blk[1])
+    if player_multiselect_blk[0] == 'LeBron James':
+        chart_blocks(lbj_blk)
+    elif player_multiselect_blk[0] == 'Michael Jordan':
+        chart_blocks(mj_blk)
+    elif player_multiselect_blk[0] == 'Kobe Bryant':
+        chart_blocks(kobe_blk)
+    elif player_multiselect_blk[0] == 'Kareem Abdul-Jabbar':
+        chart_blocks(kareem_blk)
+    else:
+        chart_blocks(curry_blk)
+
+if len(player_multiselect_blk) == 2:
+    if player_multiselect_blk[1] == 'LeBron James':
+        chart_blocks(lbj_blk)
+    elif player_multiselect_blk[1] == 'Michael Jordan':
+        chart_blocks(mj_blk)
+    elif player_multiselect_blk[1] == 'Kobe Bryant':
+        chart_blocks(kobe_blk)
+    elif player_multiselect_blk[1] == 'Kareem Abdul-Jabbar':
+        chart_blocks(kareem_blk)
+    else:
+        chart_blocks(curry_blk)
