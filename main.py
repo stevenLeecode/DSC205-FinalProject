@@ -173,6 +173,7 @@ st.subheader('Player Points Regression Plot')
 
 # REG PLOT RADIO BTN
 
+
 def plot_reg_plot(player):
   player_name = player['player'][0]
   fig = plt.figure(figsize = (16, 8))
@@ -185,15 +186,15 @@ def plot_reg_plot(player):
 player_input = st.radio('Select a Player', ('LeBron James', 'Michael Jordan', 'Kareem Abdul-Jabbar', 'Kobe Byrant', 'Stephen Curry'))
 
 if player_input == 'LeBron James':
-    plot_reg_plot(lbj)
+    plot_reg_plot(lbj_scoring)
 elif player_input == 'Michael Jordan':
-    plot_reg_plot(mj)
+    plot_reg_plot(mj_scoring)
 elif player_input == 'Kareem Abdul-Jabbar':
-    plot_reg_plot(kareem)
+    plot_reg_plot(kareem_scoring)
 elif player_input == 'Kobe Bryant':
-    plot_reg_plot(kobe)
+    plot_reg_plot(kobe_scoring)
 else:
-    plot_reg_plot(curry)
+    plot_reg_plot(curry_scoring)
 
 st.markdown('---')
 # --- Question 3 --- Assists
