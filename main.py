@@ -94,6 +94,8 @@ st.pyplot(fig = fig, clear_figure = True)
 
 # --- Question 2 ---
 
+
+
 #Gather player data to eventually plot
 lbj = player_total[player_total['player'] == 'LeBron James']
 lbj = lbj.loc[:, ['player', 'season', 'pts']]
@@ -164,6 +166,10 @@ ax.annotate('Kobe Bryant ({kobe_max_pts})'.format(kobe_max_pts = kobe['pts'].max
 ax.legend(fancybox = True, framealpha = 1, shadow = True, borderpad = 1)
 
 st.pyplot(fig = fig, clear_figure = True)
+
+goats = ('LeBron James', 'Michael Jordan', 'Kareem Abdul-Jabbar', 'Kobe Bryant', 'Stephen Curry')
+scoring_checkbox = st.checkbox('Select/Remove Players to display their data', (goats))
+
 
 st.markdown('---')
 st.subheader('Player Points Regression Plot')
