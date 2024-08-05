@@ -3,12 +3,14 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
+st.sidebar.header("Defensive Stats")
+
 st.set_page_config(
     page_title="Defensive Page",
     page_icon="🏀",
 )
 
-st.sidebar.header("Defensive Stats")
+
 
 player_total = pd.read_csv('https://raw.githubusercontent.com/stevenLeecode/DSC205-FinalProject/main/Player%20Totals.csv')
 
