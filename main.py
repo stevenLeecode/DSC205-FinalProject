@@ -17,7 +17,7 @@ player_total = pd.read_csv('Player Totals.csv')
 st.markdown("<h2 style = 'text-align: center'> NBA Greatest Player of All Time Comparisons <h2>", unsafe_allow_html=True)
 st.markdown("<h3 style = 'text-align: center'> NBA Players Dataset </h3>", unsafe_allow_html=True)
 
-st.dataframe(player_total, width = 1400, height = 200)
+st.dataframe(player_total, width = 1400, height = 275)
 
 # --- Question 1 ---
 st.markdown('---')
