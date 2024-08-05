@@ -24,4 +24,4 @@ centered_html = """
     </div>
 """
 
-st.subheader(subheader_link_html, unsafe_allow_html=True)
+st.subheader(centered_html, unsafe_allow_html=True)
