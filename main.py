@@ -168,7 +168,7 @@ def plot_reg_plot(player):
   #ax.axhline(player['pts'].mean(), color='black', linestyle='dashed', linewidth=1)
   return st.pyplot(fig = fig, clear_figure = True)
 
-player_input = st.radio('Select a Player', ('LeBron James', 'Michael Jordan', 'Kareem Abdul-Jabbar', 'Kobe Byrant', 'Stephen Curry'))
+player_input = st.radio('Select a Player', ('LeBron James', 'Michael Jordan', 'Kareem Abdul-Jabbar', 'Kobe Bryant', 'Stephen Curry'))
 
 if player_input == 'LeBron James':
     plot_reg_plot(lbj_scoring)
