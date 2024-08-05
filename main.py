@@ -13,7 +13,9 @@ st.sidebar.success("Welcome to my DSC Project - Steven Lee")
 player_total = pd.read_csv('Player Totals.csv')
 
 #st.title('NBA Greatest of All Time Comparisons - Steven Lee')
-st.markdown("<h2 style = 'text-align: center'> NBA Greatest Player of All Time Comparisons <h2>", unsafe_allow_html=True)
+st.markdown("<h2 style = 'text-align: center'> NBA Greatest Player of All Time Comparisons <br> <h2>", unsafe_allow_html=True)
+st.page_link("1_🏀_Offensive_Stats.py", label = "Offensive Stats")
+st.page_link("2_🏀_Defensive_Stats.py", label = "Defensive Stats")
 
 player_html = """
 <h3 style = 'text-align: center;'> 5 Players Analyzed </h3>
@@ -50,7 +52,7 @@ dataset_html = """
 
 st.markdown(dataset_html, unsafe_allow_html=True)
 
-st.write('Recommended to view dataset in wide view')
-st.write('1. Go to ≡ in the top right corner')
+st.write('Recommended to view website in wide view')
+st.write('1. Go to ☰ hamburger icon in the top right corner')
 st.write('2. Select settings')
 st.write('3. Check Wide mode')
