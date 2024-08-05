@@ -102,11 +102,11 @@ ax.set_title('Total Points for Last Three Years played in NBA')
 
 def last_3_seasons(player, last_season_less_3):
     player = player_total[player_total['player'] == player]
-    player_name = player['player'][0]
-    player = player.loc[:, ['season', 'pts', 'mp']]
+    player = player.loc[:, ['player','season', 'pts', 'mp']]
     player = player[player['season'] >= last_season_less_3]
     player = player.sort_values(by = ['season'], ascending = True)
     player = player.reset_index(drop=True)
+    player_name = player['player'][0]
 
     ax.plot(player.index, player['pts'], label = player_name)
 
