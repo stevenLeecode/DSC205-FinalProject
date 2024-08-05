@@ -5,7 +5,7 @@ import seaborn as sns
 
 st.set_page_config(
     page_title="Entry Point",
-    page_icon="👋",
+    page_icon="🏆",
 )
 
 st.sidebar.success("Main")
