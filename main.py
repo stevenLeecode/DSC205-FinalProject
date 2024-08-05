@@ -123,7 +123,7 @@ def last_3_seasons(player, last_season_less_3, player_color):
     elif player_name == 'Stephen Curry':
         ax.annotate(f'{player_name} ({player["mp"][0]} mins played)', xy=(player.index[0], player['pts'][0]), xytext=(player.index[0], player['pts'][0] - 100), color = player_color)
     elif player_name == 'LeBron James':
-        ax.annotate(f'{player_name} ({player["mp"][0]} mins played)', xy=(player.index[0], player['pts'][0]), xytext=(player.index[0], player['pts'][0]) + 50, color = player_color)
+        ax.annotate(f'{player_name} ({player["mp"][0]} mins played)', xy=(player.index[0], player['pts'][0]), xytext=(player.index[0], player['pts'][0]) - 50, color = player_color)
     else:
         ax.annotate(f'{player_name} ({player["mp"][0]} mins played)', xy=(player.index[0], player['pts'][0]), xytext=(player.index[0], player['pts'][0]), color = player_color)
     ax.legend()
