@@ -17,4 +17,3 @@ st.markdown("<h2 style = 'text-align: center'> NBA Greatest Player of All Time C
 st.markdown("<h3 style = 'text-align: center'> NBA Players Dataset </h3>", unsafe_allow_html=True)
 
 st.dataframe(player_total, width = 1400, height = 275)
-
