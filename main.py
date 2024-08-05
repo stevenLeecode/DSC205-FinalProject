@@ -3,6 +3,13 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
+st.set_page_config(
+    page_title="Entry Point",
+    page_icon="👋",
+)
+
+st.sidebar.success("Select a demo above.")
+
 #https://raw.githubusercontent.com/stevenLeecode/DSC205-FinalProject/main/Player%20Totals.csv
 player_total = pd.read_csv('Player Totals.csv')
 
