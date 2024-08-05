@@ -101,8 +101,8 @@ ax.set_ylabel('Points')
 ax.set_title('Total Points for Last Three Years played in NBA')
 
 def last_3_seasons(player, last_season_less_3):
-    player_name = player['player'][0]
     player = player_total[player_total['player'] == player]
+    player_name = player['player'][0]
     player = player.loc[:, ['season', 'pts', 'mp']]
     player = player[player['season'] >= last_season_less_3]
     player = player.sort_values(by = ['season'], ascending = True)
