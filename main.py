@@ -111,8 +111,8 @@ def last_3_seasons(player, last_season_less_3):
 
 player_goats = (['LeBron James', 2021], ['Michael Jordan', 2001], ['Kareem Abdul-Jabbar', 1987], ['Kobe Bryant', 2014], ['Stephen Curry', 2021])
 
-for i, j in player_goats:
-    last_3_seasons(i, j)
+for name, year in player_goats:
+    last_3_seasons(name, year)
 
 st.pyplot(fig = fig, clear_figure = True)
 
