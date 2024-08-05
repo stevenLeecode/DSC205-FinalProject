@@ -57,5 +57,4 @@ st.write('3. Check Wide mode')
 
 page_cols = st.columns(1)
 
-with page_cols:
-    st.page_link('1_🏀_Offensive_Stats.py', label = 'Offensive Stats')
+st.page_link('pages/1_🏀_Offensive_Stats.py', label = 'Offensive Stats')
