@@ -355,6 +355,7 @@ players = [curry_stl, lbj_stl, mj_stl, kobe_stl, kareem_stl]
 chart_steals_overlap(players)
 
 # --- Question 6 --- Blocks
+st.markdown('---')
 
 def block_data(player):
   player_stl = player_total[player_total['player'] == player]
