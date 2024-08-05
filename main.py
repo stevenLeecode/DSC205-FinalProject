@@ -92,7 +92,7 @@ ax.annotate('Kobe Bryant', xy=(kobe.index[0], kobe['pts'][0]), xytext=(kobe.inde
 ax.annotate('Stephen Curry', xy=(curry.index[0], curry['pts'][0]), xytext=(curry.index[0], curry['pts'][0] - 100), color = 'purple')
 
 st.pyplot(fig = fig, clear_figure = True)
-st.markdown('---')
+st.subheader('Total Scoring for each player per year in league')
 # --- Question 2 ---
 
 #Gather player data to eventually plot
@@ -110,7 +110,7 @@ kobe_scoring = get_scoring_data('Kobe Bryant')
 curry_scoring = get_scoring_data('Stephen Curry')
 
 #Plot
-
+st.markdown()
 #Plotting
 labels = ['Y' + str(i) for i in range(1, 22)]
 
