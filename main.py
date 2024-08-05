@@ -101,14 +101,14 @@ ax.set_ylabel('Points')
 ax.set_title('Total Points for Last Three Years played in NBA')
 
 def last_3_seasons(player, last_season_less_3):
+    player_name = player['player'][0]
     player = player_total[player_total['player'] == player]
     player = player.loc[:, ['season', 'pts', 'mp']]
     player = player[player['season'] >= last_season_less_3]
     player = player.sort_values(by = ['season'], ascending = True)
     player = player.reset_index(drop=True)
 
-    ax.plot(player.index, player['pts'], label = player)
-    ax.legend()
+    ax.plot(player.index, player['pts'], label = player_name)
 
 player_goats = (['LeBron James', 2021], ['Michael Jordan', 2001], ['Kareem Abdul-Jabbar', 1987], ['Kobe Bryant', 2014], ['Stephen Curry', 2021])
 
