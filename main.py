@@ -14,6 +14,7 @@ player_total = pd.read_csv('Player Totals.csv')
 
 #st.title('NBA Greatest of All Time Comparisons - Steven Lee')
 st.markdown("<h2 style = 'text-align: center'> NBA Greatest Player of All Time Comparisons <br> <h2>", unsafe_allow_html=True)
+st.markdown("<h3> Kaggle Dataset <a href='pages/1_🏀_Offensive_Stats.py'>Link</a> </h3>")
 
 player_html = """
 <h3 style = 'text-align: center;'> 5 Players Analyzed </h3>
@@ -57,4 +58,4 @@ st.write('3. Check Wide mode')
 
 page_cols = st.columns(1)
 
-st.page_link('pages/1_🏀_Offensive_Stats.py', label = 'Offensive Stats')
+#st.page_link('pages/1_🏀_Offensive_Stats.py', label = 'Offensive Stats') Does not work? I have no idea why.
