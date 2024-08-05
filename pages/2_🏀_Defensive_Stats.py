@@ -10,7 +10,7 @@ st.set_page_config(
 
 
 #https://raw.githubusercontent.com/stevenLeecode/DSC205-FinalProject/main/Player%20Totals.csv
-player_total = pd.read_csv('../Player Totals.csv')
+player_total = pd.read_csv('..\Player Totals.csv')
 
 # --- Question 4 --- Defensive/Offensive Rebounds
 st.markdown('---')
