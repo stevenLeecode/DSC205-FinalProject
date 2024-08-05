@@ -105,7 +105,7 @@ fig = plt.figure(figsize=(16, 8))
 ax = fig.add_subplot()
 ax.set_xlabel('Year')
 ax.set_ylabel('Points')
-ax.set_title('Total Points for Last Three Years played in NBA')
+ax.set_title('Total Points Scored for Last Three Years played in NBA')
 ax.set_xticks([0, 1, 2])
 ax.set_xticklabels(['Third Last Year', 'Second Last Year', 'Retirement / Last Year'])
 
