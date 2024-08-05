@@ -109,6 +109,7 @@ def last_3_seasons(player, last_season_less_3):
     player_name = player['player'][0]
 
     ax.plot(player.index, player['pts'], label = player_name)
+    ax.legend()
 
 player_goats = (['LeBron James', 2021], ['Michael Jordan', 2001], ['Kareem Abdul-Jabbar', 1987], ['Kobe Bryant', 2014], ['Stephen Curry', 2021])
 
