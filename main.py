@@ -99,7 +99,7 @@ ax = fig.add_subplot()
 ax.set_xlabel('Year')
 ax.set_ylabel('Points')
 ax.set_title('Total Points for Last Three Years played in NBA')
-ax.set_xticks([1, 2, 3])
+ax.set_xticks([0, 1, 2])
 ax.set_xticklabels(['Third Last Year', 'Second Last Year', 'Retirement / Last Year'])
 
 def last_3_seasons(player, last_season_less_3, player_color):
