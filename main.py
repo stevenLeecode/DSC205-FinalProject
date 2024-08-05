@@ -24,4 +24,7 @@ subheader_link_html = """
 
 st.markdown(subheader_link_html, unsafe_allow_html=True)
 
-st.image('dsc205-streamlit-nbapics/jordan.jpg', caption = 'LeBron James')
+col1, col2, col3, col4, col5 = st.columns(5)
+
+with col1:
+    st.image('dsc205-streamlit-nbapics/jordan.jpg', caption = 'Michael Jordan')
