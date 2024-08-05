@@ -91,9 +91,35 @@ ax.annotate(f'Kobe Bryant ({kobe["mp"][0]} mins)', xy=(kobe.index[0], kobe['pts'
 ax.annotate(f'Stephen Curry ({curry["mp"][0]} mins)', xy=(curry.index[0], curry['pts'][0]), xytext=(curry.index[0], curry['pts'][0] - 100), color = 'purple')
 
 st.pyplot(fig = fig, clear_figure = True)
-st.subheader('Total Scoring for each player per year in league')
-# --- Question 2 ---
 
+st.markdown("<h3 style = 'text-align: center'> Each Players last 3 years </h3>", unsafe_allow_html=True)
+
+fig = plt.figure()
+ax = fig.add_subplot()
+ax.set_xlabel('Year')
+ax.set_ylabel('Points')
+ax.set_title('Total Points for Last Three Years played in NBA')
+
+def last_3_seasons(player, last_season_less_3):
+    player = player_total[player_total['player'] == player]
+    player = player.loc[:, ['season', 'pts', 'mp']]
+    player = player[player['season'] >= last_season_less_3]
+    player = player.sort_values(by = ['season'], ascending = True)
+    player = player.reset_index(drop=True)
+
+    ax.plot(player.index, player['pts'], label = player)
+
+player_goats = [('LeBron James', 2021), ('Michael Jordan', 2001), ('Kareem Abdul-Jabbar', 1987), ('Kobe Bryant', 2014), ('Stephen Curry', 2021)]
+
+for i in player_goats:
+    last_3_seasons(i)
+
+st.pyplot(fig = fig, clear_figure = True)
+
+
+# --- Question 2 ---
+st.markdown('---')
+st.subheader('Total Scoring for each player per year in league')
 #Gather player data to eventually plot
 def get_scoring_data(player):
   player = player_total[player_total['player'] == player]
