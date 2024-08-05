@@ -24,4 +24,4 @@ subheader_link_html = """
 
 st.markdown(subheader_link_html, unsafe_allow_html=True)
 
-st.image('lebron.jfif', caption = 'LeBron James')
+st.image('jordan.jpg', caption = 'LeBron James')
