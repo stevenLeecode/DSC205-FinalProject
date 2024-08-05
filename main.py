@@ -17,3 +17,5 @@ st.markdown("<h2 style = 'text-align: center'> NBA Greatest Player of All Time C
 st.markdown("<h3 style = 'text-align: center'> NBA Players Dataset </h3>", unsafe_allow_html=True)
 
 st.dataframe(player_total, width = 1400, height = 275)
+
+st.subheader('Kaggle Dataset [Link](https://www.kaggle.com/datasets/rodneycarroll78/nba-stats-1980-2024?select=Player+Season+Info.csv)')
