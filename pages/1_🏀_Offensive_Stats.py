@@ -9,7 +9,7 @@ st.set_page_config(
 )
 
 #https://raw.githubusercontent.com/stevenLeecode/DSC205-FinalProject/main/Player%20Totals.csv
-player_total = pd.read_csv('https://raw.githubusercontent.com/stevenLeecode/DSC205-FinalProject/main/Player%20Totals.csv')
+player_total = pd.read_csv('Player Totals.csv')
 
 #st.title('NBA Greatest of All Time Comparisons - Steven Lee')
 st.markdown("<h2 style = 'text-align: center'> NBA Greatest Player of All Time Comparisons <h2>", unsafe_allow_html=True)
