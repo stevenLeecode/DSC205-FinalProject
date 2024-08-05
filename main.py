@@ -14,6 +14,7 @@ st.dataframe(player_total, width = 800, height = 200)
 
 # --- Question 1 ---
 
+st.markdown("<h3 style = 'text-align: center'> Each Players first 3 years </h3>", unsafe_allow_html=True)
 #Get lebrons pts for the his first 3 seasons into a dataframe.
 #Rookie season was 2003, so include seasons 04', 05', 06'.
 lbj = player_total[(player_total['player'] == 'LeBron James') & (player_total['season'] < 2007)]
@@ -94,8 +95,6 @@ st.pyplot(fig = fig, clear_figure = True)
 
 # --- Question 2 ---
 
-
-
 #Gather player data to eventually plot
 def get_scoring_data(player):
   player = player_total[player_total['player'] == player]
@@ -151,21 +150,9 @@ st.pyplot(fig = fig, clear_figure = True)
 
 goat_players = ['LeBron James', 'Michael Jordan', 'Kareem Abdul-Jabbar', 'Kobe Bryant', 'Stephen Curry']
 st.subheader('Select Players to plot their Points Scored per Year')
+
 for i in goat_players:
     checkboxes = st.checkbox(i)
-
-'''
-lebron_checkbox = st.checkbox('LeBron James')
-mj_checkbox = st.checkbox('Michael Jordan')
-kareem_checkbox = st.checkbox('Kareem Abdul-Jabbar')
-kobe_checkbox = st.checkbox('Kobe Bryant')
-curry_checkbox = st.checkbox('Stephen Curry')
-'''
-
-
-
-
-
 
 
 st.markdown('---')
