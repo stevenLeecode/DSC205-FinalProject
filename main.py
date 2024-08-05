@@ -125,7 +125,7 @@ def last_3_seasons(player, last_season_less_3, player_color):
     elif player_name == 'Kobe Bryant' or player_name == 'Michael Jordan':
         ax.annotate(f'{player_name} ({player["mp"][0]} mins played)', xy=(player.index[0], player['pts'][0]), xytext=(player.index[0] + 0.1, player['pts'][0]), color = player_color)
     else:
-        ax.annotate(f'{player_name} ({player["mp"][0]} mins played)', xy=(player.index[0], player['pts'][0]), xytext=(player.index[0] + 0.1, player['pts'][0]), color = player_color)
+        ax.annotate(f'{player_name} ({player["mp"][0]} mins played)', xy=(player.index[0], player['pts'][0]), xytext=(player.index[0], player['pts'][0]), color = player_color)
     ax.legend()
 
 player_goats = (['LeBron James', 2022, 'gold'], ['Michael Jordan', 1998, 'red'], ['Kareem Abdul-Jabbar', 1987, 'green'],
