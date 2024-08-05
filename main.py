@@ -91,11 +91,11 @@ ax.set_ylabel('Points')
 ax.set_title('Total Points for First Three Years played in NBA')
 
 
-ax.annotate(f'LeBron James ({lbj_1["mp"][0]} mins)', xy=(lbj_1.index[0], lbj_1['pts'][0]), xytext=(lbj_1.index[0], lbj_1['pts'][0] - 75), color = 'gold')
-ax.annotate(f'Michael Jordan ({mj["mp"][0]} mins)', xy=(mj.index[0], mj['pts'][0]), xytext=(mj.index[0] + 0.1, mj['pts'][0] - 75), color = 'red')
-ax.annotate(f'Kareem Abdul-Jabbar ({kareem["mp"][0]} mins)', xy=(kareem.index[0], kareem['pts'][0]), xytext=(kareem.index[0], kareem['pts'][0] + 125), color = 'green')
-ax.annotate(f'Kobe Bryant ({kobe["mp"][0]} mins)', xy=(kobe.index[0], kobe['pts'][0]), xytext=(kobe.index[0], kobe['pts'][0] - 100), color = 'blue')
-ax.annotate(f'Stephen Curry ({curry["mp"][0]} mins)', xy=(curry.index[0], curry['pts'][0]), xytext=(curry.index[0], curry['pts'][0] - 100), color = 'purple')
+ax.annotate(f'LeBron James ({lbj_1["mp"][0]} mins played)', xy=(lbj_1.index[0], lbj_1['pts'][0]), xytext=(lbj_1.index[0], lbj_1['pts'][0] - 75), color = 'gold')
+ax.annotate(f'Michael Jordan ({mj["mp"][0]} mins played)', xy=(mj.index[0], mj['pts'][0]), xytext=(mj.index[0] + 0.1, mj['pts'][0] - 75), color = 'red')
+ax.annotate(f'Kareem Abdul-Jabbar ({kareem["mp"][0]} mins played)', xy=(kareem.index[0], kareem['pts'][0]), xytext=(kareem.index[0], kareem['pts'][0] + 125), color = 'green')
+ax.annotate(f'Kobe Bryant ({kobe["mp"][0]} mins played)', xy=(kobe.index[0], kobe['pts'][0]), xytext=(kobe.index[0], kobe['pts'][0] - 100), color = 'blue')
+ax.annotate(f'Stephen Curry ({curry["mp"][0]} mins played)', xy=(curry.index[0], curry['pts'][0]), xytext=(curry.index[0], curry['pts'][0] - 100), color = 'purple')
 
 st.pyplot(fig = fig, clear_figure = True)
 
@@ -118,7 +118,7 @@ def last_3_seasons(player, last_season_less_3, player_color):
     player_name = player['player'][0]
 
     ax.plot(player.index, player['pts'], label = player_name, color = player_color)
-    ax.annotate(f'{player_name} ({player["mp"][0]})', xy=(player.index[0], player['pts'][0]), xytext=(player.index[0], player['pts'][0]), color = player_color)
+    ax.annotate(f'{player_name} ({player["mp"][0]} mins played)', xy=(player.index[0], player['pts'][0]), xytext=(player.index[0], player['pts'][0]), color = player_color)
     ax.legend()
 
 player_goats = (['LeBron James', 2022, 'gold'], ['Michael Jordan', 1998, 'red'], ['Kareem Abdul-Jabbar', 1987, 'green'],
