@@ -28,3 +28,9 @@ col1, col2, col3, col4, col5 = st.columns(5)
 
 with col1:
     st.image('dsc205-streamlit-nbapics/jordan.jpg', caption = 'Michael Jordan')
+
+with col3:
+    st.image('dsc205-streamlit-nbapics/kareem.jpg', caption = 'Michael Jordan')
+
+with col5:
+    st.image('dsc205-streamlit-nbapics/curry.jpg', caption = 'Michael Jordan')
