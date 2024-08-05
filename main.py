@@ -13,7 +13,7 @@ st.markdown("<h3 style = 'text-align: center'> NBA Players Dataset </h3>", unsaf
 st.dataframe(player_total, width = 800, height = 200)
 
 # --- Question 1 ---
-
+st.markdown('---')
 st.markdown("<h3 style = 'text-align: center'> Each Players first 3 years </h3>", unsafe_allow_html=True)
 #Get lebrons pts for the his first 3 seasons into a dataframe.
 #Rookie season was 2003, so include seasons 04', 05', 06'.
@@ -92,7 +92,7 @@ ax.annotate('Kobe Bryant', xy=(kobe.index[0], kobe['pts'][0]), xytext=(kobe.inde
 ax.annotate('Stephen Curry', xy=(curry.index[0], curry['pts'][0]), xytext=(curry.index[0], curry['pts'][0] - 100), color = 'purple')
 
 st.pyplot(fig = fig, clear_figure = True)
-
+st.markdown('---')
 # --- Question 2 ---
 
 #Gather player data to eventually plot
@@ -149,17 +149,16 @@ ax.annotate('Kobe Bryant ({kobe_max_pts})'.format(kobe_max_pts = kobe_scoring['p
 st.pyplot(fig = fig, clear_figure = True)
 
 goat_players = ['LeBron James', 'Michael Jordan', 'Kareem Abdul-Jabbar', 'Kobe Bryant', 'Stephen Curry']
-st.subheader('Select Players to plot their Points Scored per Year')
+#st.subheader('Select Players to plot their Points Scored per Year')
 
-for i in goat_players:
-    checkboxes = st.checkbox(i)
+#for i in goat_players:
+#    checkboxes = st.checkbox(i)
 
 
 st.markdown('---')
 st.subheader('Player Points Regression Plot')
 
 # REG PLOT RADIO BTN
-
 
 def plot_reg_plot(player):
   player_name = player['player'][0]
@@ -186,7 +185,7 @@ else:
 st.markdown('---')
 # --- Question 3 --- Assists
 
-st.subheader('Assists comparison')
+st.subheader('Assists comparison for each players career')
 #Gather assist data from each players full career.
 
 def assist_data(player):
@@ -307,7 +306,7 @@ kareem_stl = steal_data('Kareem Abdul-Jabbar')
 kobe_stl = steal_data('Kobe Bryant')
 curry_stl = steal_data('Stephen Curry')
 
-def chart_steals(player):
+def chart_steals(player, player_color):
   player_name = player['player'][0]
 
   fig = plt.figure(figsize = (16, 8))
@@ -317,7 +316,7 @@ def chart_steals(player):
   ax.set_title('Total Steals each season for {}.'.format(player_name))
 
   ax.set_xticks(player['season'])
-  ax.plot(player['season'], player['stl'], label = 'Steals per Season')
+  ax.plot(player['season'], player['stl'], label = 'Steals per Season', color = player_color)
   ax.legend()
   return st.pyplot(fig = fig, clear_figure = True)
 
@@ -326,15 +325,15 @@ st.subheader('Steals Plot')
 player_option_stl = st.selectbox('Select a Player', ('LeBron James', 'Michael Jordan', 'Kareem Abdul-Jabbar', 'Kobe Bryant', 'Stephen Curry'), key = 'stl_key')
 
 if player_option_stl == 'LeBron James':
-    chart_steals(lbj_stl)
+    chart_steals(lbj_stl, 'gold')
 elif player_option_stl == 'Michael Jordan':
-    chart_steals(mj_stl)
+    chart_steals(mj_stl, 'green')
 elif player_option_stl == 'Kareem Abdul-Jabbar':
-    chart_steals(kareem_stl)
+    chart_steals(kareem_stl, 'purple')
 elif player_option_stl == 'Kobe Bryant':
-    chart_steals(kobe_stl)
+    chart_steals(kobe_stl, 'red')
 else:
-    chart_steals(curry_stl)
+    chart_steals(curry_stl, 'blue')
 
 def chart_steals_overlap(players):
     fig = plt.figure(figsize=(16, 8))
