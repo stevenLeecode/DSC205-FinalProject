@@ -30,7 +30,10 @@ with col1:
     st.image('dsc205-streamlit-nbapics/jordan.jpg', caption = 'Michael Jordan')
 
 with col3:
-    st.image('dsc205-streamlit-nbapics/kareem.jpg', caption = 'Michael Jordan')
+    st.image('dsc205-streamlit-nbapics/kareem.jpg', caption = 'Kareem Abdul-Jabbar')
+
+with col4:
+    st.image('dsc205-streamlit-nbapics/kobe.jpg', caption = 'Kobe Bryant')
 
 with col5:
-    st.image('dsc205-streamlit-nbapics/curry.jpg', caption = 'Michael Jordan')
+    st.image('dsc205-streamlit-nbapics/curry.jpg', caption = 'Stephen Curry')
