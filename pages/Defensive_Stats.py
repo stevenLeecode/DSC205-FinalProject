@@ -5,7 +5,6 @@ import seaborn as sns
 
 st.set_page_config(
     page_title="Defensive Stats",
-    page_icon="🏀",
 )
 
 
