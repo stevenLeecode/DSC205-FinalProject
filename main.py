@@ -356,6 +356,7 @@ chart_steals_overlap(players)
 
 # --- Question 6 --- Blocks
 st.markdown('---')
+st.markdown("<h3 style = 'text-align: center'> Compare total blocks per each players season. </h3>", unsafe_allow_html=True)
 
 def block_data(player):
   player_stl = player_total[player_total['player'] == player]
