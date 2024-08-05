@@ -94,7 +94,7 @@ st.pyplot(fig = fig, clear_figure = True)
 
 st.markdown("<h3 style = 'text-align: center'> Each Players last 3 years </h3>", unsafe_allow_html=True)
 
-fig = plt.figure()
+fig = plt.figure(figsize=(16, 8))
 ax = fig.add_subplot()
 ax.set_xlabel('Year')
 ax.set_ylabel('Points')
