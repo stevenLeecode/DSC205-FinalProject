@@ -55,4 +55,7 @@ st.write('1. Go to ☰ hamburger icon in the top right corner')
 st.write('2. Select settings')
 st.write('3. Check Wide mode')
 
-st.page_link('1_🏀_Offensive_Stats.py', label = 'Offensive Stats')
+page_cols = st.columns(1)
+
+with page_cols:
+    st.page_link('1_🏀_Offensive_Stats.py', label = 'Offensive Stats')
