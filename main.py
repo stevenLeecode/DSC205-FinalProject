@@ -119,7 +119,7 @@ def last_3_seasons(player, last_season_less_3, player_color):
 
     ax.plot(player.index, player['pts'], label = player_name, color = player_color)
     if player_name == 'Kareem Abdul-Jabbar':
-        ax.annotate(f'{player_name} ({player["mp"][0]} mins played)', xy=(player.index[0], player['pts'][0]), xytext=(player.index[0], player['pts'][0] - 370), color = player_color)
+        ax.annotate(f'{player_name} ({player["mp"][0]} mins played)', xy=(player.index[0], player['pts'][0]), xytext=(player.index[0], player['pts'][0] - 225), color = player_color)
     else:
         ax.annotate(f'{player_name} ({player["mp"][0]} mins played)', xy=(player.index[0], player['pts'][0]), xytext=(player.index[0], player['pts'][0]), color = player_color)
     ax.legend()
