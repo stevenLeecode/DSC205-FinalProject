@@ -49,3 +49,8 @@ dataset_html = """
 """
 
 st.markdown(dataset_html, unsafe_allow_html=True)
+
+st.write('Recommended to view dataset in wide view')
+st.write('1. Go to ≡ in the top right corner')
+st.write('2. Select settings')
+st.write('3. Check Wide mode')
