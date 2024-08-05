@@ -8,7 +8,7 @@ st.set_page_config(
     page_icon="🏀",
 )
 
-st.sidebar.success("Defensive Stats")
+st.sidebar.header("Defensive Stats")
 
 player_total = pd.read_csv('https://raw.githubusercontent.com/stevenLeecode/DSC205-FinalProject/main/Player%20Totals.csv')
 
