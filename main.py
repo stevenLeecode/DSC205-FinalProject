@@ -85,11 +85,11 @@ ax.set_ylabel('Points')
 ax.set_title('Total Points for First Three Years played in NBA')
 
 
-ax.annotate('LeBron James', xy=(lbj_1.index[0], lbj_1['pts'][0]), xytext=(lbj_1.index[0], lbj_1['pts'][0] - 75), color = 'gold')
-ax.annotate('Michael Jordan', xy=(mj.index[0], mj['pts'][0]), xytext=(mj.index[0] + 0.1, mj['pts'][0] - 75), color = 'red')
-ax.annotate('Kareem Abdul-Jabbar', xy=(kareem.index[0], kareem['pts'][0]), xytext=(kareem.index[0], kareem['pts'][0] + 125), color = 'green')
+ax.annotate(f'LeBron James ({lbj["mp"][0]})', xy=(lbj_1.index[0], lbj_1['pts'][0]), xytext=(lbj_1.index[0], lbj_1['pts'][0] - 75), color = 'gold')
+ax.annotate(f'Michael Jordan ({mj["mp"][0]})', xy=(mj.index[0], mj['pts'][0]), xytext=(mj.index[0] + 0.1, mj['pts'][0] - 75), color = 'red')
+ax.annotate(f'Kareem Abdul-Jabbar ({kareem["mp"][0]})', xy=(kareem.index[0], kareem['pts'][0]), xytext=(kareem.index[0], kareem['pts'][0] + 125), color = 'green')
 ax.annotate(f'Kobe Bryant ({kobe["mp"][0]} Mins Played)', xy=(kobe.index[0], kobe['pts'][0]), xytext=(kobe.index[0], kobe['pts'][0] - 100), color = 'blue')
-ax.annotate('Stephen Curry', xy=(curry.index[0], curry['pts'][0]), xytext=(curry.index[0], curry['pts'][0] - 100), color = 'purple')
+ax.annotate(f'Stephen Curry ({curry["mp"][0]})', xy=(curry.index[0], curry['pts'][0]), xytext=(curry.index[0], curry['pts'][0] - 100), color = 'purple')
 
 st.pyplot(fig = fig, clear_figure = True)
 st.subheader('Total Scoring for each player per year in league')
