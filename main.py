@@ -19,6 +19,8 @@ player_html = """
 <h3 style = 'text-align: center;'> 5 Players Analyzed </h3>
 """
 
+st.markdown(player_html, unsafe_allow_html=True)
+
 col1, col2, col3, col4, col5 = st.columns(5)
 
 with col1:
