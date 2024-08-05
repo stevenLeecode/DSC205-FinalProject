@@ -118,7 +118,7 @@ def last_3_seasons(player, last_season_less_3, player_color):
     player_name = player['player'][0]
 
     ax.plot(player.index, player['pts'], label = player_name, color = player_color)
-    ax.annotate(f'{player} ({player["mp"][0]})', xy=(player.index[0], player['pts'][0]), xytext=(player.index[0], player['pts'][0]), color = player_color)
+    ax.annotate(f'{player_name} ({player["mp"][0]})', xy=(player.index[0], player['pts'][0]), xytext=(player.index[0], player['pts'][0]), color = player_color)
     ax.legend()
 
 player_goats = (['LeBron James', 2022, 'gold'], ['Michael Jordan', 1998, 'red'], ['Kareem Abdul-Jabbar', 1987, 'green'],
