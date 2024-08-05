@@ -14,8 +14,6 @@ player_total = pd.read_csv('Player Totals.csv')
 
 #st.title('NBA Greatest of All Time Comparisons - Steven Lee')
 st.markdown("<h2 style = 'text-align: center'> NBA Greatest Player of All Time Comparisons <br> <h2>", unsafe_allow_html=True)
-st.markdown("<h3> <a href = https://dsc205-finalproject-kzjkwrnqdy8pnhzyd3atro.streamlit.app/Offensive_Stats> Offensive Stats </a> </h3>")
-st.markdown("<h3> <a href = https://dsc205-finalproject-kzjkwrnqdy8pnhzyd3atro.streamlit.app/Defensive_Stats> Defensive Stats </a> </h3>")
 
 
 player_html = """
