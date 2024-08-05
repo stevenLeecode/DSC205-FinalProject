@@ -18,10 +18,8 @@ st.markdown("<h3 style = 'text-align: center'> NBA Players Dataset </h3>", unsaf
 
 st.dataframe(player_total, width = 1400, height = 275)
 
-centered_html = """
-    <div style="text-align: center;">
-        <h3>Kaggle Dataset <a href="https://www.kaggle.com/datasets/rodneycarroll78/nba-stats-1980-2024?select=Player+Season+Info.csv">Link</a>, used Player Totals.csv</h3>
-    </div>
+subheader_link_html = """
+<h3 style = 'text-align: center;'> Kaggle Dataset <a href = https://www.kaggle.com/datasets/rodneycarroll78/nba-stats-1980-2024?select=Player+Season+Info.csv> </h3>
 """
 
-st.subheader(centered_html, unsafe_allow_html=True)
+st.markdown(subheader_link_html, unsafe_allow_html=True)
