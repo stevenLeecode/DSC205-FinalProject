@@ -4,8 +4,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 st.set_page_config(
-    page_title="homepage",
-    page_icon="🏡",
+    page_title="Homepage"
 )
 
 st.sidebar.success("Welcome to my DSC Project - Steven Lee")
