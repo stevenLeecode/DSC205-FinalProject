@@ -110,7 +110,6 @@ kobe_scoring = get_scoring_data('Kobe Bryant')
 curry_scoring = get_scoring_data('Stephen Curry')
 
 #Plot
-st.markdown()
 #Plotting
 labels = ['Y' + str(i) for i in range(1, 22)]
 
