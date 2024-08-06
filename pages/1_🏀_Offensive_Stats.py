@@ -22,13 +22,11 @@ st.markdown('---')
 st.markdown("<h3 style = 'text-align: center'> Each Players first 3 years </h3>", unsafe_allow_html=True)
 #Get lebrons pts for the his first 3 seasons into a dataframe.
 #Rookie season was 2003, so include seasons 04', 05', 06'.
-lbj = player_total[(player_total['player'] == 'LeBron James') & (player_total['season'] < 2007)]
-
-lbj_1 = lbj.loc[:, ['season', 'pts', 'mp']]
-lbj_1 = lbj_1.sort_values(by = ['season'], ascending = True)
-lbj_1 = lbj_1.reset_index(drop=True)
-#drop season column
-lbj_1 = lbj_1.drop(columns=['season'])
+lbj = player_total[(player_total['player'] == 'LeBron James')]
+lbj = lbj.loc[:, ['season', 'pts', 'mp']]
+lbj = lbj[lbj['season'] < 2007]
+lbj = lbj.sort_values(by = ['season'], ascending = True)
+lbj = lbj.reset_index(drop=True)
 #lbj_1 = lbj_1[::-1].reset_index(drop=True)
 
 #Plot LeBron's total points for first 3 seasons.
@@ -78,7 +76,7 @@ ax = fig.add_subplot()
 ax.set_xticks(lbj_1.index)
 ax.set_xticklabels(labels)
 
-ax.plot(lbj_1.index, lbj_1['pts'], label = 'LeBron James', color = 'gold')
+ax.plot(lbj.index, lbj['pts'], label = 'LeBron James', color = 'gold')
 ax.plot(mj.index, mj['pts'], label = 'Michael Jordan', color = 'red')
 ax.plot(kareem.index, kareem['pts'], label = 'Kareem Abdul-Jabbar', color = 'green')
 ax.plot(kobe.index, kobe['pts'], label = 'Kobe Bryant', color = 'blue')
