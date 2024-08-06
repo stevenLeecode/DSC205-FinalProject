@@ -73,7 +73,7 @@ curry = curry.reset_index(drop=True)
 labels = ['Season 1', 'Season 2', 'Season 3']
 fig = plt.figure(figsize = (14, 8)) #figsize goes x, y dimensions.
 ax = fig.add_subplot()
-ax.set_xticks(lbj_1.index)
+ax.set_xticks(lbj.index)
 ax.set_xticklabels(labels)
 
 ax.plot(lbj.index, lbj['pts'], label = 'LeBron James', color = 'gold')
