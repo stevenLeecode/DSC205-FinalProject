@@ -123,7 +123,7 @@ def chart_steals_overlap(player, colour, line_style):
 
 # Assuming curry_stl, lbj_stl, mj_stl, kobe_stl, and kareem_stl are already defined
 players = ([curry_stl, 'purple', 'solid'], [lbj_stl, 'gold', 'dotted'], [mj_stl, 'red', 'solid'], [kobe_stl, 'blue', 'dashdot'], [kareem_stl, 'green', 'dashed'])
-for player_obj, colour, line_style in players:
+for player, colour, line_style in players:
     chart_steals_overlap(player, colour, line_style)
 
 # --- Question 6 --- Blocks
