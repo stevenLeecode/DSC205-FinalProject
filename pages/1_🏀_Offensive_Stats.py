@@ -242,7 +242,7 @@ ax.set_xlabel('Player')
 ax.set_ylabel('Average Points per Season')
 ax.set_title('Total Average Points per Season')
 
-ax.annotate(f'{lbj_avg} pps', xy=(player_avg_df['player'][0], player_avg_df['avg_pts'][0]), xytext=(-0.165, lbj_avg - 200))
+ax.annotate(f'{lbj_avg} pps', xy=(player_avg_df['player'][0], player_avg_df['avg_pts'][0]), xytext=(-0.145, lbj_avg - 200))
 ax.annotate(f'{mj_avg} pps', xy=(player_avg_df['player'][1], player_avg_df['avg_pts'][1]), xytext=(1 - 0.185, mj_avg - 235))
 ax.annotate(f'{kareem_avg} pps', xy=(player_avg_df['player'][2], player_avg_df['avg_pts'][2]), xytext=(2 - 0.185, kareem_avg - 170))
 ax.annotate(f'{kobe_avg} pps', xy=(player_avg_df['player'][3], player_avg_df['avg_pts'][3]), xytext=(3 - 0.185, kobe_avg - 200))
