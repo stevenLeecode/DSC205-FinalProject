@@ -89,7 +89,7 @@ ax.set_title('Total Points for First Three Years played in NBA')
 
 
 ax.annotate(f'LeBron James ({lbj["mp"][0]} mins played)', xy=(lbj.index[0], lbj['pts'][0]), xytext=(lbj.index[0], lbj['pts'][0] - 75), color = 'gold')
-ax.annotate(f'Michael Jordan ({mj["mp"][0]} mins played)', xy=(mj.index[0], mj['pts'][0]), xytext=(mj.index[0] + 0.1, mj['pts'][0] - 75), color = 'red')
+ax.annotate(f'Michael Jordan ({mj["mp"][0]} mins played)', xy=(mj.index[0], mj['pts'][0]), xytext=(mj.index[0] + 0.1, mj['pts'][0] - 95), color = 'red')
 ax.annotate(f'Kareem Abdul-Jabbar ({kareem["mp"][0]} mins played)', xy=(kareem.index[0], kareem['pts'][0]), xytext=(kareem.index[0], kareem['pts'][0] + 165), color = 'green')
 ax.annotate(f'Kobe Bryant ({kobe["mp"][0]} mins played)', xy=(kobe.index[0], kobe['pts'][0]), xytext=(kobe.index[0], kobe['pts'][0] - 100), color = 'blue')
 ax.annotate(f'Stephen Curry ({curry["mp"][0]} mins played)', xy=(curry.index[0], curry['pts'][0]), xytext=(curry.index[0], curry['pts'][0] - 100), color = 'purple')
