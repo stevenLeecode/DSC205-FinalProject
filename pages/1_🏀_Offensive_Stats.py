@@ -86,6 +86,7 @@ ax.plot(curry.index, curry['pts'], label = 'Stephen Curry', color = 'purple')
 ax.set_xlabel('Year')
 ax.set_ylabel('Points')
 ax.set_title('Total Points for First Three Years played in NBA')
+ax.legend()
 
 
 ax.annotate(f'LeBron James ({lbj["mp"][0]} mins played)', xy=(lbj.index[0], lbj['pts'][0]), xytext=(lbj.index[0], lbj['pts'][0] - 75), color = 'gold')
