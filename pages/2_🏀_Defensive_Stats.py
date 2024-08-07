@@ -103,7 +103,7 @@ elif player_option_stl == 'Kobe Bryant':
 else:
     chart_steals(curry_stl, 'blue')
 
-def chart_steals_overlap(players):
+def chart_steals_overlap(players, colour, line_style):
     fig = plt.figure(figsize=(16, 8))
     ax = fig.add_subplot()
     ax.set_xlabel('Season')
@@ -113,13 +113,17 @@ def chart_steals_overlap(players):
 
     for player in players:
         player_name = player['player'][0]
-        ax.plot(player['season'], player['stl'], label=player_name)
+        ax.plot(player['season'], player['stl'], label=player_name, color = colour, linestyle = line_style)
 
     ax.legend()
     return st.pyplot(fig = fig, clear_figure = True)
 
+     #LBJ linestyle = 'dotted'
+    #Kareem linestyle = 'dashed'
+    #Kobe linestyle = 'dashdot'
+
 # Assuming curry_stl, lbj_stl, mj_stl, kobe_stl, and kareem_stl are already defined
-players = [curry_stl, lbj_stl, mj_stl, kobe_stl, kareem_stl]
+players = ([curry_stl, 'purple', 'solid'], [lbj_stl, 'gold', 'dotted'], [mj_stl, 'red', 'solid'], [kobe_stl, 'blue', 'dashdot'], [kareem_stl, 'green', 'dashed'])
 chart_steals_overlap(players)
 
 # --- Question 6 --- Blocks
