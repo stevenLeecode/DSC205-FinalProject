@@ -79,8 +79,8 @@ ax.set_xticklabels(labels)
 
 ax.plot(lbj.index, lbj['pts'], label = 'LeBron James', color = 'gold', linestyle = 'dotted')
 ax.plot(mj.index, mj['pts'], label = 'Michael Jordan', color = 'red')
-ax.plot(kareem.index, kareem['pts'], label = 'Kareem Abdul-Jabbar', color = 'green')
-ax.plot(kobe.index, kobe['pts'], label = 'Kobe Bryant', color = 'blue')
+ax.plot(kareem.index, kareem['pts'], label = 'Kareem Abdul-Jabbar', color = 'green', linestyle='dashed')
+ax.plot(kobe.index, kobe['pts'], label = 'Kobe Bryant', color = 'blue', linestyle='dashdot')
 ax.plot(curry.index, curry['pts'], label = 'Stephen Curry', color = 'purple')
 
 ax.set_xlabel('Year')
