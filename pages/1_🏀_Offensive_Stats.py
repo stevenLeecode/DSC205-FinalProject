@@ -224,6 +224,23 @@ else:
     plot_reg_plot(curry_scoring)
 
 st.markdown('---')
+
+#Bar chart
+fig, ax = plt.subplots(figsize=(12, 6))
+plt.style.use('ggplot')
+ax.bar(player_avg_df['player'], player_avg_df['avg_pts'], color=['blue', 'orange', 'green', 'red', 'purple'])
+ax.set_xlabel('Player')
+ax.set_ylabel('Average Points per Season')
+ax.set_title('Total Average Points per Season')
+
+
+ax.annotate(f'{lbj_avg} pps', xy=(player_avg_df['player'][0], player_avg_df['avg_pts'][0]), xytext=(-0.185, lbj_avg - 200))
+ax.annotate(f'{mj_avg} pps', xy=(player_avg_df['player'][1], player_avg_df['avg_pts'][1]), xytext=(1 - 0.185, mj_avg - 200))
+ax.annotate(f'{kareem_avg} pps', xy=(player_avg_df['player'][2], player_avg_df['avg_pts'][2]), xytext=(2 - 0.185, kareem_avg - 200))
+ax.annotate(f'{kobe_avg} pps', xy=(player_avg_df['player'][3], player_avg_df['avg_pts'][3]), xytext=(3 - 0.185, kobe_avg - 200))
+ax.annotate(f'{curry_avg} pps', xy=(player_avg_df['player'][4], player_avg_df['avg_pts'][4]), xytext=(4 - 0.185, curry_avg - 200))
+ax.annotate('pps: Average Points Per Season', xy=(len(player_avg_df) - 1, player_avg_df['avg_pts'].max()), xytext=(len(player_avg_df) - 1.65, player_avg_df['avg_pts'].max()))
+st.markdown('---')
 # --- Question 3 --- Assists
 
 st.subheader('Assists comparison for each players career')
