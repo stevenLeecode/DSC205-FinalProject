@@ -234,7 +234,8 @@ curry_avg = round(curry_scoring['pts'].mean())
 player_avg_df = pd.DataFrame({'player': ['LeBron James', 'Michael Jordan', 'Kareem Abdul-Jabbar', 'Kobe Bryant', 'Stephen Curry'], 'avg_pts': [lbj_avg, mj_avg, kareem_avg, kobe_avg, curry_avg]})
 
 #Bar chart
-fig, ax = plt.subplots(figsize=(12, 6))
+fig = plt.figure()
+ax = fig.add_subplot
 plt.style.use('ggplot')
 ax.bar(player_avg_df['player'], player_avg_df['avg_pts'], color=['blue', 'orange', 'green', 'red', 'purple'])
 ax.set_xlabel('Player')
