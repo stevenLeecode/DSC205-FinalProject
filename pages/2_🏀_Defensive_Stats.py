@@ -149,7 +149,7 @@ kareem_blk.isna().sum().sum()
 kareem_blk_no_NaN = kareem_blk.dropna()
 kareem_blk_no_NaN.reset_index(drop=True, inplace=True) #Reset index to grab players name
 
-def chart_blocks(player):
+def chart_blocks(player, colour):
 
   player_name = player['player'][0]
 
@@ -166,7 +166,7 @@ def chart_blocks(player):
 
   ax.set_xticks(player['season'])
   ax.set_xticklabels(labels)
-  plot = ax.plot(player['season'], player['blk'], label = 'Blocks per season')
+  plot = ax.plot(player['season'], player['blk'], label = 'Blocks per season', color = colour)
   ax.legend()
 
   return st.pyplot(fig = fig, clear_figure = True)
@@ -180,25 +180,25 @@ col1, col2 = st.columns(2)
 with col1:
     if len(player_multiselect_blk) == 2:
         if player_multiselect_blk[0] == 'LeBron James':
-            chart_blocks(lbj_blk)
+            chart_blocks(lbj_blk, 'gold')
         elif player_multiselect_blk[0] == 'Michael Jordan':
-            chart_blocks(mj_blk)
+            chart_blocks(mj_blk, 'red')
         elif player_multiselect_blk[0] == 'Kobe Bryant':
-            chart_blocks(kobe_blk)
+            chart_blocks(kobe_blk, 'blue')
         elif player_multiselect_blk[0] == 'Kareem Abdul-Jabbar':
-            chart_blocks(kareem_blk)
+            chart_blocks(kareem_blk, 'green')
         else:
-            chart_blocks(curry_blk)
+            chart_blocks(curry_blk, 'purple')
 
 with col2:
     if len(player_multiselect_blk) == 2:
         if player_multiselect_blk[1] == 'LeBron James':
-            chart_blocks(lbj_blk)
+            chart_blocks(lbj_blk, 'gold')
         elif player_multiselect_blk[1] == 'Michael Jordan':
-                chart_blocks(mj_blk)
+                chart_blocks(mj_blk, 'red')
         elif player_multiselect_blk[1] == 'Kobe Bryant':
-            chart_blocks(kobe_blk)
+            chart_blocks(kobe_blk, 'blue')
         elif player_multiselect_blk[1] == 'Kareem Abdul-Jabbar':
-            chart_blocks(kareem_blk)
+            chart_blocks(kareem_blk, 'green')
         else:
-            chart_blocks(curry_blk)
+            chart_blocks(curry_blk, 'purple')
