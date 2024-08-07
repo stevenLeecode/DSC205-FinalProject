@@ -40,7 +40,7 @@ def chart_rebounds(player):
 
   ax.set_xticks(player['season'])
   ax.plot(player['season'], player['drb'], label = 'Defensive Rebounds')
-  ax.plot(player['season'], player['orb'], label = 'Offensive Rebounds')
+  ax.plot(player['season'], player['orb'], label = 'Offensive Rebounds', linestyle = 'dashed')
   ax.legend()
   return st.pyplot(fig = fig, clear_figure = True)
 
