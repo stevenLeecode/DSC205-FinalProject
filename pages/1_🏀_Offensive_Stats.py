@@ -206,10 +206,10 @@ st.subheader('Player Points Regression Plot')
 
 # REG PLOT RADIO BTN
 
-def plot_reg_plot(player):
+def plot_reg_plot(player, color):
   player_name = player['player'][0]
   fig = plt.figure(figsize = (16, 8))
-  sns.regplot(x = player['season'], y = player['pts'], line_kws = {'color': 'red'}).set_title(f'{player_name} Total Points Per Season')
+  sns.regplot(x = player['season'], y = player['pts'], line_kws = {'color': color'}).set_title(f'{player_name} Total Points Per Season')
   plt.xticks(player['season'])
   #Show average value using axvline
   #ax.axhline(player['pts'].mean(), color='black', linestyle='dashed', linewidth=1)
@@ -218,15 +218,15 @@ def plot_reg_plot(player):
 player_input = st.radio('Select a Player', ('LeBron James', 'Michael Jordan', 'Kareem Abdul-Jabbar', 'Kobe Bryant', 'Stephen Curry'))
 
 if player_input == 'LeBron James':
-    plot_reg_plot(lbj_scoring)
+    plot_reg_plot(lbj_scoring, 'gold')
 elif player_input == 'Michael Jordan':
-    plot_reg_plot(mj_scoring)
+    plot_reg_plot(mj_scoring, 'red')
 elif player_input == 'Kareem Abdul-Jabbar':
-    plot_reg_plot(kareem_scoring)
+    plot_reg_plot(kareem_scoring, 'green')
 elif player_input == 'Kobe Bryant':
-    plot_reg_plot(kobe_scoring)
+    plot_reg_plot(kobe_scoring, 'blue')
 else:
-    plot_reg_plot(curry_scoring)
+    plot_reg_plot(curry_scoring, 'purple')
 
 st.markdown('---')
 
