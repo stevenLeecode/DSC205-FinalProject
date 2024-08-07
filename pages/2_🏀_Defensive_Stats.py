@@ -161,7 +161,7 @@ def chart_blocks(player):
 
   #Add xtick labels
   labels = []
-  for i in range(1, len(player)-1, 1):
+  for i in range(1, len(player)+1, 1):
     labels.append(i)
 
   ax.set_xticks(player['season'])
