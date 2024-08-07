@@ -225,6 +225,15 @@ else:
 
 st.markdown('---')
 
+lbj_avg = round(lbj_scoring['pts'].mean())
+mj_avg = round(mj_scoring['pts'].mean())
+kareem_avg = round(kareem_scoring['pts'].mean())
+kobe_avg = round(kobe_scoring['pts'].mean())
+curry_avg = round(curry_scoring['pts'].mean())
+
+player_avg_df = pd.DataFrame({'player': ['LeBron James', 'Michael Jordan', 'Kareem Abdul-Jabbar', 'Kobe Bryant', 'Stephen Curry'], 'avg_pts': [lbj_avg, mj_avg, kareem_avg, kobe_avg, curry_avg]})
+player_avg_df
+
 #Bar chart
 fig, ax = plt.subplots(figsize=(12, 6))
 plt.style.use('ggplot')
