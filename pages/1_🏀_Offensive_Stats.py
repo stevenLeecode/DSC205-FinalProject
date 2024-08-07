@@ -107,7 +107,7 @@ ax.set_title('Total Points Scored for Last Three Years played in NBA')
 ax.set_xticks([0, 1, 2])
 ax.set_xticklabels(['Third Last Year', 'Second Last Year', 'Retirement / Last Year'])
 
-def last_3_seasons(player, last_season_less_3, player_color):
+def last_3_seasons(player, last_season_less_3, player_color, line_style):
     player = player_total[player_total['player'] == player]
     player = player.loc[:, ['player','season', 'pts', 'mp']]
     player = player[player['season'] >= last_season_less_3]
@@ -115,7 +115,11 @@ def last_3_seasons(player, last_season_less_3, player_color):
     player = player.reset_index(drop=True)
     player_name = player['player'][0]
 
-    ax.plot(player.index, player['pts'], label = player_name, color = player_color)
+    #LBJ linestyle = 'dotted'
+    #Kareem linestyle = 'dashed'
+    #Kobe linestyle = 'dashdot'
+
+    ax.plot(player.index, player['pts'], label = player_name, color = player_color, linestyle=line_style)
     if player_name == 'Kareem Abdul-Jabbar':
         ax.annotate(f'{player_name} ({player["mp"][0]} mins played)', xy=(player.index[0], player['pts'][0]), xytext=(player.index[0], player['pts'][0] - 195), color = player_color)
     elif player_name == 'Stephen Curry':
@@ -126,11 +130,11 @@ def last_3_seasons(player, last_season_less_3, player_color):
         ax.annotate(f'{player_name} ({player["mp"][0]} mins played)', xy=(player.index[0], player['pts'][0]), xytext=(player.index[0], player['pts'][0] + 35), color = player_color)
     ax.legend()
 
-player_goats = (['LeBron James', 2022, 'gold'], ['Michael Jordan', 1998, 'red'], ['Kareem Abdul-Jabbar', 1987, 'green'],
-    ['Kobe Bryant', 2014, 'blue'], ['Stephen Curry', 2022, 'purple'])
+player_goats = (['LeBron James', 2022, 'gold', 'dotted'], ['Michael Jordan', 1998, 'red', 'solid'], ['Kareem Abdul-Jabbar', 1987, 'green', 'dashed'],
+    ['Kobe Bryant', 2014, 'blue', 'dashdot'], ['Stephen Curry', 2022, 'purple', 'solid'])
 
-for name, year, p_color in player_goats:
-    last_3_seasons(name, year, p_color)
+for name, year, p_color, line_style in player_goats:
+    last_3_seasons(name, year, p_color, line_style)
 
 st.pyplot(fig = fig, clear_figure = True)
 
