@@ -235,13 +235,12 @@ player_avg_df = pd.DataFrame({'player': ['LeBron James', 'Michael Jordan', 'Kare
 
 #Bar chart
 fig = plt.figure()
-ax = fig.add_subplot
+ax = fig.add_subplot()
 plt.style.use('ggplot')
 ax.bar(player_avg_df['player'], player_avg_df['avg_pts'], color=['blue', 'orange', 'green', 'red', 'purple'])
 ax.set_xlabel('Player')
 ax.set_ylabel('Average Points per Season')
 ax.set_title('Total Average Points per Season')
-
 
 ax.annotate(f'{lbj_avg} pps', xy=(player_avg_df['player'][0], player_avg_df['avg_pts'][0]), xytext=(-0.185, lbj_avg - 200))
 ax.annotate(f'{mj_avg} pps', xy=(player_avg_df['player'][1], player_avg_df['avg_pts'][1]), xytext=(1 - 0.185, mj_avg - 200))
