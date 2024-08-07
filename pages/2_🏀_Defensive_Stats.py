@@ -159,10 +159,16 @@ def chart_blocks(player):
   ax.set_ylabel('blocks per Season')
   ax.set_title('Total blocks each season for {}.'.format(player_name))
 
+  #Add xtick labels
+  labels = []
+  for i in range(1, len(player), 1):
+    labels.append(i)
+
   ax.set_xticks(player['season'])
+  ax.set_xticklabels(labels)
   plot = ax.plot(player['season'], player['blk'], label = 'Blocks per season')
   ax.legend()
-  #return st.pyplot(fig = fig, clear_figure = True)
+
   return st.pyplot(fig = fig, clear_figure = True)
 
 
