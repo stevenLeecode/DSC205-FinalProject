@@ -248,6 +248,7 @@ ax.annotate(f'{kareem_avg} pps', xy=(player_avg_df['player'][2], player_avg_df['
 ax.annotate(f'{kobe_avg} pps', xy=(player_avg_df['player'][3], player_avg_df['avg_pts'][3]), xytext=(3 - 0.185, kobe_avg - 200))
 ax.annotate(f'{curry_avg} pps', xy=(player_avg_df['player'][4], player_avg_df['avg_pts'][4]), xytext=(4 - 0.185, curry_avg - 200))
 ax.annotate('pps: Average Points Per Season', xy=(len(player_avg_df) - 1, player_avg_df['avg_pts'].max()), xytext=(len(player_avg_df) - 1.65, player_avg_df['avg_pts'].max()))
+st.pyplot(fig, clear_figure=True)
 st.markdown('---')
 # --- Question 3 --- Assists
 
